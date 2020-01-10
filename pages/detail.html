@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../layui-v2.5.5/layui/css/layui.css" media="all"/>
+		<style type="text/css">
+			html,body{
+				padding: 0px;
+				margin: 0px;
+			}
+			a,li{
+				text-decoration: none;
+				list-style: none;
+			}
+			
+			#hourmain{
+				display: flex;
+				width: 1178px;
+				box-sizing: border-box;
+				margin: auto;
+				margin-top: 20px;
+			}
+			
+			#hourmain a:hover{
+				color: white;
+			}
+			
+			.infor-right p{
+				padding: 8px 0px;
+			}
+			
+			.agent-box>div{
+				margin-top: 30px;
+				margin-left: 30px;
+			}
+			
+			.layui-tab-content{
+				height: calc(100% - 40px)!important;
+			}
+			
+			.layui-tab-content{
+				padding: 0px;
+			}
+			
+			.price-number{
+				font-size: 30px;
+				color: #fe615a;
+			}
+			
+			.price-unit{
+				font-size: 16px;
+				color: #fe615a;
+			}
+			
+			
+			.sell-status{
+			    height: 21px;
+			    width: 40px;
+			    background: #f3a530;
+			    display: inline-block;
+			    text-align: center;
+			    border-radius: 5px;
+			    color: white;
+			}
+			
+			.infor-right>p>span:nth-child(1){
+				color: #aeaeae;
+				display: inline-block;
+				width: 70px;
+			}
+			
+			
+			ul>li{
+				padding: 3px 0px;
+			}
+			
+			ul>li>span{
+				display: inline-block;
+				width: 105px;
+				color: #999;
+				font-size: 14px;
+			}
+			
+			.layWrap{
+				 width: 1178px;
+				 box-sizing: border-box;
+				 margin: auto;
+				 font-size: 15px;
+				 margin-top: 50px;
+				 line-height: 30px;
+				 padding: 30px;
+				 box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+			}
+				
+		</style>
+	</head>
+	<body>
+		<!-- 顶部导航栏 -->
+		<div style="width: 1178px; box-sizing: border-box; height: 40px; margin: auto; display: flex; justify-content: space-between; align-items: center;">
+			<div>
+				<a href="../index.html">首页</a> >
+				<a href="more.html">新房</a> >
+				<strong>房屋详情</strong>
+			</div>
+			<div>服务热线400-009-9900</div>
+		</div>
+		<!-- 顶部导航栏end -->
+		
+		
+		<!-- 搜索栏 -->
+		<div style="width: 1178px; box-sizing: border-box; margin: auto; display: flex; padding-top: 15px;">
+			<img src="../img/logo.jpg" style="width: 53px;height: 50px;">
+			<input type="text" name="title" required lay-verify="required" placeholder="输入楼盘名称或商圈、区域" style="padding: 25px" autocomplete="off" class="layui-input">    
+			<button type="button" class="layui-btn  layui-btn-danger" style="height: 50px;">搜新房</button>
+		</div>
+		<!-- 搜索栏end -->
+		
+		
+		<!-- 房屋图片详情 -->
+		<div id="hourmain">
+			<div class="layui-tab layui-tab-card"  style="height: 320px;width: 50%;">
+			  <ul class="layui-tab-title">
+			    <li class="layui-this">效果图</li>
+			    <li>实景图</li>
+			    <li>样板图</li>
+			    <li>区位图</li>
+			  </ul>
+			  <div class="layui-tab-content" style="height: 100px;">
+			    <div class="layui-tab-item layui-show">
+					<!-- 效果图轮播 -->
+					<div class="layui-carousel" id="xgtCard">
+					  <div carousel-item>
+					  </div>
+					</div>
+					<!-- 效果图轮播 -->
+				</div>
+			    <div class="layui-tab-item">
+					<!-- 实景图轮播 -->
+					<div class="layui-carousel" id="sjtCard">
+					  <div carousel-item>
+					  </div>
+					</div>
+					<!-- 实景图图轮播 -->
+				</div>
+			    <div class="layui-tab-item">
+					<!-- 样板图图轮播 -->
+					<div class="layui-carousel" id="ybtCard">
+					  <div carousel-item>
+					  </div>
+					</div>
+					<!-- 样板图轮播 -->
+				</div>
+			    <div class="layui-tab-item">
+					<!-- 区位图轮播 -->
+					<div class="layui-carousel" id="qwtCard">
+					  <div carousel-item>
+					  </div>
+					</div>
+					<!-- 区位图轮播 -->
+				</div>
+			  </div>
+			</div>
+		</div>
+		<!-- 房屋图片详情end -->
+		
+		<!-- 户型介绍 -->
+		<div class="layWrap">
+			<p>户型介绍</p>
+			<div style="display: flex;">
+				<div style="width: 205px;height: 340px;border: 1px solid #e4e6f0;">
+					<img src="../img/logo.jpg"  style="height: 50%;width: 100%;">
+					<div style="padding-left: 3px;line-height: 25px; padding: 16px 8px;">
+						<p style="font-size: 14px; font-weight: 700">3室2厅2卫</p>
+						<p style="color: #9399a5;font-size: 14px;">建面 89²</p>
+						<p style="margin-bottom: 5px;font-size: 16px;color: #fa5741;">约196万/套</p>
+					</div>
+				</div>
+				
+				<div style="width: 205px;height: 340px;border: 1px solid #e4e6f0; margin-left: 20px;">
+					<img src="../img/logo.jpg"  style="height: 50%;width: 100%;">
+					<div style="padding-left: 3px;line-height: 25px; padding: 16px 8px;">
+						<p style="font-size: 14px; font-weight: 700">3室2厅2卫</p>
+						<p style="color: #9399a5;font-size: 14px;">建面 89²</p>
+						<p style="margin-bottom: 5px;font-size: 16px;color: #fa5741;">约196万/套</p>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+		<!-- 户型图end -->
+		
+		
+		<!-- 经纪人顾问 -->
+		<div class="layWrap">
+			<p>经纪人顾问</p>
+			<div style="display: flex;" class="agent-box">
+				<div style="display: flex; margin-left: 70px;">
+					<img style="width: 90px;height: 90px;border-radius: 50%;" src="../img/01.png" >
+					<div style="">
+						<p>陈永奇 <span style="color: #00FF00;">9.5</span>分</p>
+						<p>15360661512</p>
+					</div>
+				</div>
+				<div style="display: flex; margin-left: 70px;">
+					<img style="width: 90px;height: 90px; border-radius: 50%;" src="../img/02.png" >
+					<div style="">
+						<p>廖学书 <span style="color: #00FF00;">9.5</span>分</p>
+						<p>15360661512</p>
+					</div>
+				</div>
+				<div style="display: flex; margin-left: 70px;">
+					<img style="width: 90px;height: 90px; border-radius: 50%;" src="../img/03.png" >
+					<div style="">
+						<p>王处斯 <span style="color: #00FF00;">9.5</span>分</p>
+						<p>15360661512</p>
+					</div>
+				</div>
+				<div style="display: flex; margin-left: 70px;">
+					<img style="width: 90px;height: 90px;   border-radius: 50%;" src="../img/01.png" >
+					<div style="">
+						<p>冯嘉兴 <span style="color: #00FF00;">9.5</span>分</p>
+						<p>15360661512</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 经纪人顾问end -->
+		
+		<!-- 楼盘动态 -->
+		<div class="layWrap" id="estateDynamic">
+			<p>楼盘动态</p>
+		</div>
+		<!-- 楼盘动态end -->
+		
+		
+		<!-- 楼盘信息 -->
+		<div class="layWrap">
+			<p>楼盘信息</p>
+			<div id="xiangqingBox" style="display: flex;flex-wrap: wrap;">
+				
+			</div>
+		</div>
+		<!-- 楼盘信息end -->
+		
+		<!-- 页脚 -->
+		<footer style="height: 200px; margin-top: 100px; min-width: 1194px; background:#121212;">
+			<di style="width: 1178px;box-sizing: border-box;  text-align: center; color: rgb(117,117,117);">
+				<div style="border-bottom: 1px solid #D9D9D9;padding: 20px;">佛山市采房有限公司</div>
+				<div style="padding-top: 20px;">
+					关于我们 | 联系我们 | 用户协议 | 友情链接 | 广告服务 | 用户须知 | 异常反馈 | 营业执照
+				</div>
+				<div style="padding-top: 20px;">
+					Copyright©2019 粤ICP备19025915号
+				</div>
+			</div>
+		</footer>
+		<!-- 页脚end -->
+	</body>
+</html>
+
+
+<script src="../lib/jquery3.41.js" type="text/javascript" charset="utf-8"></script>
+<script src="../lib/jquery.params.js.js"></script>
+<script src="../layui-v2.5.5/layui/layui.js" type="text/javascript" charset="utf-8"></script>
+<script>
+	var serverUrl = 'http://47.113.113.156:8080/'
+
+
+	$(function(){
+		console.log('2')
+		var id = $.query.get("id") || "";
+		console.log(id)
+		$.ajax({
+			type:'post',
+			url:serverUrl+"/cf-new-house/load",
+			data:{id:id},
+			success:function(res){
+				var data = res.data
+				var cfEffectImgs   = data.cfEffectImgs		//效果图集
+				var cfSceneryImgs  = data.cfSceneryImgs		//实景图集
+				var cfTemplateImgs = data.cfTemplateImgs		//样板图集
+				var cfLocationImgs = data.cfLocationImgs		//区位图集
+				console.log(data)
+				
+				
+				
+				/*----------------------------------------效果图轮播渲染----------------------------------------------*/
+				for(let item of cfEffectImgs){
+					let imgdiv = `<div><img src="${item.effectImg}" style="height:100%;width:100%"></div>`
+					$('#xgtCard div').append(imgdiv)
+				}
+				layui.use('carousel', function(){
+				  let carousel = layui.carousel;
+				  carousel.render({
+				    elem: '#xgtCard',
+					width: '100%',
+					arrow: 'always',
+					indicator:'none',
+					autoplay:false
+				  });
+				});
+				
+				
+				/*----------------------------------------实景图轮播渲染----------------------------------------------*/
+				for(let item of cfSceneryImgs){
+					let imgdiv = `<div><img src="${item.sceneryImg}" style="height:100%;width:100%"></div>`
+					$('#sjtCard div').append(imgdiv)
+				}
+				layui.use('carousel', function(){
+				  let carousel = layui.carousel;
+				  carousel.render({
+				    elem: '#sjtCard',
+					width: '100%',
+					arrow: 'always',
+					indicator:'none',
+					autoplay:false
+				  });
+				});
+				
+
+				/*----------------------------------------样板图轮播渲染----------------------------------------------*/
+				for(let item of cfTemplateImgs){
+					let imgdiv = `<div><img src="${item.templateImg}" style="height:100%;width:100%"></div>`
+					$('#ybtCard div').append(imgdiv)
+				}
+				layui.use('carousel', function(){
+				  let carousel = layui.carousel;
+				  carousel.render({
+				    elem: '#ybtCard',
+					width: '100%',
+					arrow: 'always',
+					indicator:'none',
+					autoplay:false
+				  });
+				});
+				
+				/*----------------------------------------区位图轮播渲染----------------------------------------------*/
+				for(let item of cfLocationImgs){
+					let imgdiv = `<div><img src="${item.locationImg}" style="height:100%;width:100%"></div>`
+					$('#qwtCard div').append(imgdiv)
+				}
+				layui.use('carousel', function(){
+				  let carousel = layui.carousel;
+				  carousel.render({
+				    elem: '#qwtCard',
+					width: '100%',
+					arrow: 'always',
+					indicator:'none',
+					autoplay:false
+				  });
+				});
+				
+				
+				/*-------------------------------楼盘介绍渲染--------------------------------*/
+				let	smipleInfoDiv=`<div class="infor-right" style="margin-left:25px">
+							<h1>${data.cfNewHouse.estateName}</h1>
+							<p><span>参考价格:</span> <span class="price-number"> ${data.cfNewHouse.unitPrice}</span> <span class="price-unit">元/m²</span></p>
+							<p><span>销售状态:</span> <a href="javascript:void(0);" class="sell-status"> ${data.cfNewHouse.salesStatus} </a></p>
+							<p><span>楼盘地址:</span> <span>${data.cfNewHouse.estateAddress}</span></p>
+							<p><span>户型:</span> 	  <span>3居两厅</span></p>
+							<div style="font-size: 20px;margin-top: 10px; font-weight: 650;">营销中心 ${data.cfNewHouse.saleHousePhone}</div>
+						</div>`
+				$("#hourmain").append(smipleInfoDiv)
+				
+				
+				
+				/*-------------------------------楼盘动态渲染--------------------------------*/
+				let dtDiv = `<div>
+								，${data.cfNewHouse.estateDynamic}
+							</div>`
+				$("#estateDynamic").append(dtDiv)
+				
+				
+				
+				/*-------------------------------楼盘信息渲染--------------------------------*/
+				let dataInfoDiv = `<div style="width:50%;margin-top: 30px;">
+										<ul>
+											<li><span>占地面积:</span> ${data.cfNewHouse.floorSpace} m²</li>
+											<li><span>建筑面积:</span>  ${data.cfNewHouse.floorArea} m²</li>
+											<li><span>绿化率:</span> ${data.cfNewHouse.greeningRate}%</li>
+											<li><span>容积率:</span> ${data.cfNewHouse.plotRatio}%</li>
+											<li><span>总户数:</span> ${data.cfNewHouse.totalHouseholds}个</li>
+											<li><span>车位:</span> ${data.cfNewHouse.carport}个</li>
+											<li><span>物业类型:</span> ${data.cfNewHouse.tenementSituation}</li>
+											<li><span>装修描述:</span> ${data.cfNewHouse.decorationDescribe}</li>
+											<li><span>产权:</span> ${data.cfNewHouse.propertyRight}年</li>
+										</ul>
+									</div>
+									<div style="width:50%;margin-top: 30px;">
+										<ul>
+											<li><span>售楼地址:</span> ${data.cfNewHouse.salesAddress}</li>
+											<li><span>楼盘区域:</span> ${data.cfNewHouse.estateDistrict}</li>
+											<li><span>楼盘地址:</span> ${data.cfNewHouse.estateAddress}</li>
+											<li><span>售楼电话:</span> ${data.cfNewHouse.saleHousePhone}</li>
+											<li><span>总户数:</span> ${data.cfNewHouse.totalHouseholds}</li>
+											<li><span>价格:</span> 约${data.cfNewHouse.unitPrice}元/m²</li>
+											<li><span>开盘时间:</span> ${data.cfNewHouse.openTime}</li>
+											<li><span>交付时间:</span> ${data.cfNewHouse.deliveryTime}</li>
+										</ul>
+									</div>`
+				$("#xiangqingBox").append(dataInfoDiv)
+			}
+		})
+		
+		
+		
+		
+		// 选项卡
+		layui.use('element', function(){
+		  var element = layui.element;
+		  //一些事件监听
+		  element.on('tab(demo)', function(data){
+		    console.log(data);
+		  });
+		});
+	})
+</script>

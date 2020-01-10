@@ -1,0 +1,287 @@
+html,body{
+			width: 100%;
+		}
+		
+		/* 顶部导航栏 */
+		.topNav{
+			position: absolute;
+			 top: 1px;
+			 width: 100%;
+			 height: 50px;
+			 box-sizing: border-box;
+			 padding: 0px 30px;
+			 display: flex;
+			 justify-content: space-between;
+		}
+		
+		.topNav a{
+			text-decoration: none;
+			color: white;
+		}
+		
+		.topNav a:hover{
+			color: white;
+		}
+		
+		.topNav div:nth-child(2){
+			font-size: 16px;
+			color: white;
+			display: flex;
+			font-size: 16px;
+		}
+		
+		/* 顶部导航栏 */
+		
+		.layui-carousel{
+			background: none!important;
+		}
+		
+		.hotHourseImg-box{
+			margin-top: 30px;
+		}
+		
+		.hotHourseImg-box>ul{
+			display: flex; 
+			justify-content: space-between;
+		}
+		
+		.hotHourseImg-box>ul>li{
+			height: 288px;
+			width: 30%;
+		}
+		
+		
+		.hotHourseImg-box>ul>li>img{
+			height: 100%;
+			width: 100%;
+		}
+		
+		/*****登录注册用户样式***/
+		.layui-layer-title {
+		    /* padding: 0 80px 0 155px !important; */
+			/* text-align: center !important; */
+			font-size:16px!important;
+			font-weight: 500!important;
+			margin:10px 0;
+		}
+		.login-line{
+			margin-top:20px;
+		}
+	    #loginBtnText,#registerBtnText{
+			margin:20px 0;
+		}
+		
+		.hotHourseImg-box>ul>li>img:hover{
+			transition: width 2s, height 2s, transform 2s;
+			-moz-transition: width 2s, height 2s, -moz-transform 2s;
+			-webkit-transition: width 2s, height 2s, -webkit-transform 2s;
+			-o-transition: width 2s, height 2s,-o-transform 2s;
+		}
+		
+		
+		li{
+			list-style: none;
+		}
+		.layui-input{
+			width: 75%;
+		}
+/***轮播***/
+#test1{
+	min-width: 1184px;
+}
+#test1  .carousel-imgs,#test1  .carousel-imgs1{
+	background-size: cover;
+	width: 100%;
+}
+#test1  .carousel-imgs{
+	background: url(../img/index-content.jpg) no-repeat;
+}
+#test1  .carousel-imgs1{
+	background: url(../img/index-content.jpg) no-repeat;
+}
+.topNav{
+	width:95%;
+	margin:0 2.5%;
+	height:100px;
+	line-height:100px;
+}
+.topNav>.topNav-left{
+	height:100px;
+	line-height:100px;
+}
+.topNav>.topNav-left>.topNav-img{
+	height: 100px;
+	 width: 100px;
+}
+.topNav>.topNav-line{
+	margin-right: 50px;
+	line-height: 30px; 
+	position: relative;
+}
+#xcxImgs{
+	position: absolute;
+	height: 100px;
+	width: 100px;
+	background: red;
+	right: 250px;
+	top:65px;
+	display: none;
+}
+.topNav>.topNav-right>.topNav-line{
+	padding:0 50px;
+}
+.topNav>.topNav-right>.topNav-line>a{
+	padding:0 10px;
+	cursor: pointer;
+}
+.topNav>.topNav-right>.topNav-line>#xcxImgs>img{
+	height: 100%;
+	width: 100%;
+}
+.topNav>.topNav-right>.topNav-line>a:hover{
+	color:#e1251b;
+}
+.topNav>.topNav-right > .login-icon{
+	height: 30px;
+	 width: 30px;
+	 margin-top: 35px;
+	 padding: 0 10px;
+}
+/* 热卖新房 */
+.index-newHouse{
+	width: 1178px; 
+	margin: auto;
+	background: none;
+	box-sizing: border-box;
+	 margin-top: 50px;
+}
+.index-newHouse>div>.index-sonDiv{
+	display: flex;
+	justify-content: space-between;
+}
+.index-newHouse>div>.index-sonDiv>div>.index-newHouseSon{
+	font-size: 30px; 
+	font-weight: bold;
+}
+.index-newHouseSpecial{
+	    font-size: 16px;
+	    margin-left: 12px;
+	    color: #333;
+}
+.index-seeMore{
+	margin-top: 16px;
+	    font-size: 15px;
+	    color: #4e4e4e;
+}
+.index-newHouse-son1{
+	height: 50px;
+	margin-top: 20px;
+}
+.hotHourseImg-box>ul>li>img{
+	width:100%;
+	height:100%;
+	background: url(../img/index-content.jpg) ;
+	background-size:100% 100%;
+}
+/* 经纪人推建 */
+.index-agent{
+	background: rgb(247,247,247);
+	padding:50px 0px;
+}
+.index-agent>.index-agent-box{
+	width: 1178px;
+	 margin: auto;
+	 box-sizing: border-box;
+	 
+}
+.index-agent-type{
+	padding: 20px 0px;
+	display: flex;
+	justify-content: space-between;
+}
+.index-find-agent{
+	font-size: 30px;
+	 font-weight: bold;
+}
+.index-agent-box{
+	margin-top:30px;
+}
+.index-agent-box>ul{
+	display: flex; 
+	justify-content: space-between;
+}
+.index-agent-box>ul>li{
+	height: 308px;
+	width: 228px;
+	background: url('https://fs.esf.fangdd.com/efab/FizVBExbKvtdHNateMb9834G1zp1.png') no-repeat;
+}
+.index-agent-box>ul>li>.index-agent-center{
+	text-align: center;
+}
+.index-agent-box>ul>li>.index-agent-center>img{
+	height: 80px;
+	width: 80px;
+	border-radius: 50%;
+	margin-top: 50px;
+}
+.index-agent-box>ul>li>.index-agent-phone{
+	margin-top: 5px;
+}
+.index-agent-box>ul>li>.index-agent-type{
+	padding: 20px 0px;
+}
+.index-agent-box>ul>li{
+	height: 308px;
+	width: 228px;
+	background: url('https://fs.esf.fangdd.com/efab/FizVBExbKvtdHNateMb9834G1zp1.png') no-repeat;
+}
+/* 优选新房 */
+.index-optimization{
+	width: 1178px; 
+	margin: auto;
+	background: none;
+	box-sizing: border-box;
+	padding-bottom: 50px;
+}
+.index-optimization>div>.index-optimization-newHose{
+	display: flex;
+	justify-content: space-between;
+}
+.index-optimization-newHose-type{
+	font-size: 30px; 
+	font-weight: bold;
+}
+.index-optimization>#YXhourse{
+	margin-top: 30px;
+	 display: flex;
+	 justify-content: space-between;
+	 flex-wrap: wrap;
+}
+/* 尾部 */
+.index-footer{
+	height: 200px;
+	min-width: 1194px; 
+	background:#121212;
+}
+
+.index-footer>.footer-center{
+	text-align: center;
+	color: rgb(117,117,117);
+}
+.index-footer>.footer-center>.footer-title{
+	border-bottom: 1px solid #D9D9D9;
+	padding: 20px;
+	color:#fff;
+}
+footer a{
+	color:#999;
+	padding:0 10px;
+	font-size:15px;
+}
+footer a:hover{
+	color: #FFFFFF;
+}
+.index-footer>.footer-center>.footer-foot{
+	padding-top: 20px;
+	font-size:15px;
+}

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../layui-v2.5.5/layui/css/layui.css" media="all"/>
+		<style type="text/css">
+			html,body{
+				width: 100%;
+				height: 100%;
+				padding: 0px;
+				margin: 0px;
+			}
+			a{
+				text-decoration: none;
+			}
+			li{
+				list-style: none;
+			}
+			li span{
+				display: inline-block;
+				width: 100px;
+			}
+			
+			.type-filter{
+				width: 1178px;
+				margin: auto;
+				padding: 30px;
+			}
+			
+			.type-filter li{
+				padding: 10px 0px;
+			}
+			
+			.type-filter li input[type='radio']{
+				margin-left: 5px;
+			}
+			
+			.order-box{
+				width: 1178px;
+				margin: auto;
+			}
+			
+			.order-item{
+				display: flex;
+				padding: 30px 0px;
+				border-bottom: 1px solid #eee;
+			}
+			
+			.order-item:hover{
+				background: #F8F8F8;
+			}
+			
+			.order-item div:nth-child(2){
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 顶部导航栏 -->
+		<div style="width: 1178px; height: 40px; margin: auto; display: flex; justify-content: space-between; align-items: center;">
+			<div><a href="../index.html">首页</a> > <strong>新房</strong></div>
+			<div>服务热线400-009-9900</div>
+		</div>
+		<!-- 顶部导航栏end -->
+		
+		<!-- 搜索 -->
+		<div style="width: 1178px; margin: auto; display: flex; padding-top: 15px;">
+			<img src="../img/logo.jpg" style="width: 53px;height: 50px;">
+			<input type="text" name="title" required lay-verify="required" placeholder="输入楼盘名称或商圈、区域" style="padding: 25px" autocomplete="off" class="layui-input">    
+			<button type="button" class="layui-btn layui-btn-warm" style="height: 50px;">搜新房</button>
+		</div>
+		<!-- 搜索end -->
+		
+		<!-- 分类筛选 -->
+		<div class="type-filter">
+			<ul>
+				<li>
+						<strong>位置</strong>
+						<input type="radio" name="city" value="禅城区" title="禅城区">禅城区
+						<input type="radio" name="city" value="南海区" title="南海区">南海区
+						<input type="radio" name="city" value="三水区" title="三水区">三水区
+						<input type="radio" name="city" value="高明区" title="高明区">高明区
+						<input type="radio" name="city" value="顺德区" title="顺德区">顺德区
+				</li>
+				<li>
+					<strong>总价</strong>
+					<input type="radio" name="price" value="100以下" title="100以下">100以下
+					<input type="radio" name="price" value="100-150万" title="100-150万">100-150万
+					<input type="radio" name="price" value="150-200万" title="150-200万">150-200万
+					<input type="radio" name="price" value="200-300万" title="200-300万">200-300万
+					<input type="radio" name="price" value="300-500万" title="200-300万">300-500万
+					<input type="radio" name="price" value="500万以上" title="500万以上">500万以上
+				</li>
+				<li>
+					<strong>类型</strong>
+					<input type="radio" name="type" value="不限别墅" title="100不限别墅">不限别墅
+					<input type="radio" name="type" value="住宅" title="住宅">住宅
+					<input type="radio" name="type" value="公寓" title="公寓">公寓
+					<input type="radio" name="type" value="商铺" title="200-300万">商铺
+					<input type="radio" name="type" value="写字楼" title="200-300万">写字楼
+				</li>
+			</ul>
+		</div>
+		<!-- 分类筛选 -->
+		
+		<!-- 全部房源列表 -->
+		<h2 style="width: 1178px;text-align: left;margin: auto;">为您找到<span style="color: #00FF00;" id="hourseCount"></span>个新房</h2>
+		<div id="orderList" class="order-box">
+		</div>
+		<!-- 全部房源列表end -->
+		
+		<!-- 分页 -->
+		<div style="text-align: center;">
+			<div id="test1"></div>
+		</div>
+		<!-- 分页 -->
+		
+		
+		<footer style="height: 200px; min-width: 1194px; background:#121212;">
+			<di style="width: 1178px; text-align: center; color: rgb(117,117,117);">
+				<div style="border-bottom: 1px solid #D9D9D9;padding: 20px;">佛山市采房有限公司</div>
+				<div style="padding-top: 20px;">
+					关于我们 | 联系我们 | 用户协议 | 友情链接 | 广告服务 | 用户须知 | 异常反馈 | 营业执照
+				</div>
+				<div style="padding-top: 20px;">
+					Copyright©2019 粤ICP备19025915号
+				</div>
+			</div>
+		</footer>
+	</body>
+	
+	<script src="../lib/jquery3.41.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../layui-v2.5.5/layui/layui.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var serverUrl = 'http://47.113.113.156:8080/'
+		
+		function ondetail(id){
+			window.location.href="detail.html?id=" + id
+		}
+		
+		// 分类
+		// $("input[type='radio']").on("click",function(){
+			
+			
+		// 	let type = $(this).val()
+		// 	console.log($(this).val());
+		// 	$.ajax({
+		// 		type:'post',
+		// 		url: serverUrl + '/cf-new-house/findAll',
+		// 		data:{
+		// 		"offset": (e.curr),
+		// 		"pagesize": e.limit-2
+		// 		},
+		// 		success:function(res){
+		// 		console.log(res.data)
+		// 			$('#hourseCount').text(res.data.length)
+		// 			$("#orderList").empty();
+					
+		// 			for(let item of res.data){
+		// 				let	orderItem = `<div class="order-item" onclick="ondetail(${item.cfNewHouse.id})">
+		// 									<div style="width: 232px; height: 200px;"><img style="width: 100%;height: 100%;" src="../img/6f51344f46a796a86e999680fa60348.jpg" ></div>
+		// 									<div style="width: 480px; margin-left: 35px;">
+		// 										<h2>${item.cfNewHouse.estateName}</h2>
+		// 										<p>面积:  77-139平方</p>
+		// 										<p>户型: 3室-4室</p>
+		// 										<p>地址: ${item.cfNewHouse.salesAddress}</p>
+		// 									</div>
+		// 									<div style="width: 150px;">
+		// 										${item.cfNewHouse.unitPrice}元/平方
+		// 									</div>
+		// 								</div>`
+		// 				$('#orderList').append(orderItem)
+		// 			}
+		// 		}
+		// 	})
+		// })
+		
+		
+		//分页
+		layui.use('laypage', function(){
+		  var laypage = layui.laypage;
+			laypage.render({
+				elem: 'test1' 
+				,count: 12, 
+				groups:2,
+				jump:function(e,first){
+					$.ajax({
+						type:'post',
+						url: serverUrl + '/cf-new-house/findAll',
+						data:{
+						   "offset": (e.curr),
+						   "pagesize": (e.limit-2)
+						},
+						success:function(res){
+						   console.log(res)
+							$('#hourseCount').text(res.count)
+							$("#orderList").empty();
+							for(let item of res.data){
+								let coverImg = item.cfEffectImgs[0].effectImg
+								let	orderItem = `<div class="order-item" onclick="ondetail(${item.cfNewHouse.id})">
+													<div style="width: 232px; height: 200px;"><img style="width: 100%;height: 100%;" src="${coverImg}" ></div>
+													<div style="width: 480px; margin-left: 35px;">
+														<h2>${item.cfNewHouse.estateName}</h2>
+														<p>面积:  77-139平方</p>
+														<p>户型: 3室-4室</p>
+														<p>地址: ${item.cfNewHouse.salesAddress}</p>
+													</div>
+													<div style="width: 150px;">
+														${item.cfNewHouse.unitPrice}元/平方
+													</div>
+												</div>`
+								$('#orderList').append(orderItem)
+							}
+						}
+					})
+				}
+			});
+		});
+	   
+		
+		
+		$(function(){
+				   // $.ajax({
+					  //  type:'post',
+					  //  url: serverUrl + '/cf-new-house/findAll',
+					  //  data:{
+						 //   "offset": (e.curr),
+						 //   "pagesize": e.limit-2
+					  //  },
+					  //  success:function(res){
+						 //   console.log(res.data)
+							// $('#hourseCount').text(res.count)
+							// $("#orderList").empty();
+						   	
+							// for(let item of res.data){
+						 //   		let	orderItem = `<div class="order-item" onclick="ondetail(${item.cfNewHouse.id})">
+						 //   							<div style="width: 232px; height: 200px;"><img style="width: 100%;height: 100%;" src="../img/6f51344f46a796a86e999680fa60348.jpg" ></div>
+						 //   							<div style="width: 480px; margin-left: 35px;">
+						 //   								<h2>${item.cfNewHouse.estateName}</h2>
+						 //   								<p>面积:  77-139平方</p>
+						 //   								<p>户型: 3室-4室</p>
+						 //   								<p>地址: ${item.cfNewHouse.salesAddress}</p>
+						 //   							</div>
+						 //   							<div style="width: 150px;">
+						 //   								${item.cfNewHouse.unitPrice}元/平方
+						 //   							</div>
+						 //   						</div>`
+						 //   		$('#orderList').append(orderItem)
+								
+								
+						 //   	}
+						   	
+					  //  }
+				   // })
+		})
+	</script>
+</html>
