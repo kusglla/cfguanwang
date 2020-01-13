@@ -30,6 +30,10 @@
 				padding: 8px 0px;
 			}
 			
+			.layui-carousel{
+				height: 372px!important;
+			}
+			
 			.agent-box>div{
 				margin-top: 30px;
 				margin-left: 30px;
@@ -44,8 +48,9 @@
 			}
 			
 			.price-number{
-				font-size: 30px;
+				font-size: 3.2em;
 				color: #fe615a;
+				font-weight: 700;
 			}
 			
 			.price-unit{
@@ -57,17 +62,18 @@
 			.sell-status{
 			    height: 21px;
 			    width: 40px;
-			    background: #f3a530;
+			    background: rgb(6,116,68);
 			    display: inline-block;
 			    text-align: center;
 			    border-radius: 5px;
 			    color: white;
+				/* vertical-align: bottom; */
 			}
 			
 			.infor-right>p>span:nth-child(1){
 				color: #aeaeae;
 				display: inline-block;
-				width: 70px;
+				font-size: 18px;
 			}
 			
 			
@@ -92,7 +98,9 @@
 				 padding: 30px;
 				 box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
 			}
-				
+			.phone-box p{
+				padding: 0px;
+			}
 		</style>
 	</head>
 	<body>
@@ -111,8 +119,8 @@
 		<!-- 搜索栏 -->
 		<div style="width: 1178px; box-sizing: border-box; margin: auto; display: flex; padding-top: 15px;">
 			<img src="../img/logo.jpg" style="width: 53px;height: 50px;">
-			<input type="text" name="title" required lay-verify="required" placeholder="输入楼盘名称或商圈、区域" style="padding: 25px" autocomplete="off" class="layui-input">    
-			<button type="button" class="layui-btn  layui-btn-danger" style="height: 50px;">搜新房</button>
+			<input type="text" name="title" required lay-verify="required" placeholder="输入楼盘名称" style="padding: 25px" autocomplete="off" class="layui-input">    
+			<button type="button" class="layui-btn layui-btn-warm" style="height: 50px;">搜新房</button>
 		</div>
 		<!-- 搜索栏end -->
 		
@@ -126,7 +134,7 @@
 			    <li>样板图</li>
 			    <li>区位图</li>
 			  </ul>
-			  <div class="layui-tab-content" style="height: 100px;">
+			  <div class="layui-tab-content">
 			    <div class="layui-tab-item layui-show">
 					<!-- 效果图轮播 -->
 					<div class="layui-carousel" id="xgtCard">
@@ -161,6 +169,44 @@
 				</div>
 			  </div>
 			</div>
+			<div class="infor-right" style="margin-left:25px;flex: 1;">
+			 			<div style="display:flex">
+			 				<span style="height:50px;font-size:3.2em;height: 50px;font-weight: 600;color: rgb(105,105,105);">保利南湾花园 <!-- ${data.cfNewHouse.estateName} --></span>
+							<div style="display: flex;align-items: flex-end; margin-left: 10px;">
+								<a href="javascript:void(0);" class="sell-status"> 在售<!-- ${data.cfNewHouse.salesStatus} --></a>
+							</div>
+			  			</div>
+						
+			  			<p style="height: 60px;margin-top: 15px;">
+							<span>价格:</span>
+							<span class="price-number">1800</span> <span class="price-unit">元/平方</span>
+						</p>
+						
+						<div style="height: 55px; padding: 10px; justify-content: space-between; background: rgb(240,255,255);display: flex;">
+							<div style="text-align: center;">
+								<p style="color: rgb(122,162,192);font-size: 16px;padding: 0;">一站式购房平台</p>
+								<p style="color: #999;">更多房源 精确匹配 丨 免费专车 好房一边看完</p>
+							</div>
+							<div>
+								<a style="background: rgb(75,183,243);padding: 6px 20px;border-radius: 5px;color: white;">免费专车看房</a>
+							</div>
+						</div>
+						
+						<p><span>户型:</span> <span style="font-size: 18px;">89m²(三居)、103m²(三居)、108m²(四居)</span></p>
+						<p><span>描述:</span> <span style="font-size: 18px;">毛坯</span></p>
+			  			<p><span>地址:</span> <span style="font-size: 18px;">佛山市三水区撒干撒</span></p>
+						
+						<div style="height: 70px; padding: 10px; justify-content: space-between; background: rgb(240,255,255);display: flex;">
+							<div style="margin: auto; width: 50px;">
+								<img src="../img/phone-icon.png" >
+							</div>
+							<div class="phone-box"> 
+								<p style="text-align: right;color: #999;">电话加密保护,放心向TA咨询</p>
+								<p style="font-size: 3.2em;font-weight: 700;color: rgb(244,5,10);">0757-63838600</p>
+							</div>
+							<div style="width: 100px;"></div>
+						</div>
+			</div>
 		</div>
 		<!-- 房屋图片详情end -->
 		
@@ -169,7 +215,7 @@
 			<p>户型介绍</p>
 			<div style="display: flex;">
 				<div style="width: 205px;height: 340px;border: 1px solid #e4e6f0;">
-					<img src="../img/logo.jpg"  style="height: 50%;width: 100%;">
+					<img src="../img/logo.png"  style="height: 50%;width: 100%;">
 					<div style="padding-left: 3px;line-height: 25px; padding: 16px 8px;">
 						<p style="font-size: 14px; font-weight: 700">3室2厅2卫</p>
 						<p style="color: #9399a5;font-size: 14px;">建面 89²</p>
@@ -196,29 +242,29 @@
 			<p>经纪人顾问</p>
 			<div style="display: flex;" class="agent-box">
 				<div style="display: flex; margin-left: 70px;">
-					<img style="width: 90px;height: 90px;border-radius: 50%;" src="../img/01.png" >
-					<div style="">
+					<img style="width: 90px;height: 90px;border-radius: 50%;" src="../img/sale1.jpg" >
+					<div style="margin-left: 10px;">
 						<p>陈永奇 <span style="color: #00FF00;">9.5</span>分</p>
 						<p>15360661512</p>
 					</div>
 				</div>
 				<div style="display: flex; margin-left: 70px;">
-					<img style="width: 90px;height: 90px; border-radius: 50%;" src="../img/02.png" >
-					<div style="">
+					<img style="width: 90px;height: 90px; border-radius: 50%;" src="../img/sale2.jpg" >
+					<div style="margin-left: 10px;">
 						<p>廖学书 <span style="color: #00FF00;">9.5</span>分</p>
 						<p>15360661512</p>
 					</div>
 				</div>
 				<div style="display: flex; margin-left: 70px;">
-					<img style="width: 90px;height: 90px; border-radius: 50%;" src="../img/03.png" >
-					<div style="">
+					<img style="width: 90px;height: 90px; border-radius: 50%;" src="../img/sale3.jpg" >
+					<div style="margin-left: 10px;>
 						<p>王处斯 <span style="color: #00FF00;">9.5</span>分</p>
 						<p>15360661512</p>
 					</div>
 				</div>
 				<div style="display: flex; margin-left: 70px;">
-					<img style="width: 90px;height: 90px;   border-radius: 50%;" src="../img/01.png" >
-					<div style="">
+					<img style="width: 90px;height: 90px;   border-radius: 50%;" src="../img/sale4.jpg" >
+					<div style="margin-left: 10px;">
 						<p>冯嘉兴 <span style="color: #00FF00;">9.5</span>分</p>
 						<p>15360661512</p>
 					</div>
@@ -244,8 +290,18 @@
 		<!-- 楼盘信息end -->
 		
 		<!-- 页脚 -->
-		<iframe  MARGINWIDTH=0 MARGINHEIGHT=0 HSPACE=0 VSPACE=0 FRAMEBORDER=0 SCROLLING=no src="footer.html" height="200px" width="100%"></iframe>
-	
+		<footer style="height: 200px; margin-top: 100px; min-width: 1194px; background:#121212;">
+			<di style="width: 1178px;box-sizing: border-box;  text-align: center; color: rgb(117,117,117);">
+				<div style="border-bottom: 1px solid #D9D9D9;padding: 20px;">佛山市采房有限公司</div>
+				<div style="padding-top: 20px;">
+					关于我们 | 联系我们 | 用户协议 | 友情链接 | 广告服务 | 用户须知 | 异常反馈 | 营业执照
+				</div>
+				<div style="padding-top: 20px;">
+					Copyright©2019 粤ICP备19025915号
+				</div>
+			</div>
+		</footer>
+		<!-- 页脚end -->
 	</body>
 </html>
 
@@ -271,7 +327,7 @@
 				var cfSceneryImgs  = data.cfSceneryImgs		//实景图集
 				var cfTemplateImgs = data.cfTemplateImgs		//样板图集
 				var cfLocationImgs = data.cfLocationImgs		//区位图集
-				console.log(data)
+				// console.log(data)
 				
 				
 				
@@ -342,16 +398,19 @@
 				});
 				
 				
+							// <p><span>销售状态:</span></p>
 				/*-------------------------------楼盘介绍渲染--------------------------------*/
-				let	smipleInfoDiv=`<div class="infor-right" style="margin-left:25px">
-							<h1>${data.cfNewHouse.estateName}</h1>
-							<p><span>参考价格:</span> <span class="price-number"> ${data.cfNewHouse.unitPrice}</span> <span class="price-unit">元/m²</span></p>
-							<p><span>销售状态:</span> <a href="javascript:void(0);" class="sell-status"> ${data.cfNewHouse.salesStatus} </a></p>
-							<p><span>楼盘地址:</span> <span>${data.cfNewHouse.estateAddress}</span></p>
-							<p><span>户型:</span> 	  <span>3居两厅</span></p>
-							<div style="font-size: 20px;margin-top: 10px; font-weight: 650;">营销中心 ${data.cfNewHouse.saleHousePhone}</div>
-						</div>`
-				$("#hourmain").append(smipleInfoDiv)
+				// let	smipleInfoDiv=`<div class="infor-right" style="margin-left:25px">
+				// 			<div style="display:flex">
+				// 				<h1 style="height:50px">名字 ${data.cfNewHouse.estateName}</h1>
+				// 				<a href="javascript:void(0);" class="sell-status"> 在售 ${data.cfNewHouse.salesStatus} </a>
+				// 			</div>
+				// 			<p><span>参考价格:</span> <span class="price-number"> ${data.cfNewHouse.unitPrice}</span> <span class="price-unit">元/m²</span></p>
+				// 			<p><span>楼盘地址:</span> <span>${data.cfNewHouse.estateAddress}</span></p>
+				// 			<p><span>户型:</span> 	  <span>3居两厅</span></p>
+				// 			<div style="font-size: 20px;margin-top: 10px; font-weight: 650;">营销中心 ${data.cfNewHouse.saleHousePhone}</div>
+				// 		</div>`
+				// $("#hourmain").append(smipleInfoDiv)
 				
 				
 				
@@ -365,31 +424,43 @@
 				
 				/*-------------------------------楼盘信息渲染--------------------------------*/
 				let dataInfoDiv = `<div style="width:50%;margin-top: 30px;">
-										<ul>
-											<li><span>占地面积:</span> ${data.cfNewHouse.floorSpace} m²</li>
-											<li><span>建筑面积:</span>  ${data.cfNewHouse.floorArea} m²</li>
-											<li><span>绿化率:</span> ${data.cfNewHouse.greeningRate}%</li>
-											<li><span>容积率:</span> ${data.cfNewHouse.plotRatio}%</li>
-											<li><span>总户数:</span> ${data.cfNewHouse.totalHouseholds}个</li>
-											<li><span>车位:</span> ${data.cfNewHouse.carport}个</li>
-											<li><span>物业类型:</span> ${data.cfNewHouse.tenementSituation}</li>
-											<li><span>装修描述:</span> ${data.cfNewHouse.decorationDescribe}</li>
-											<li><span>产权:</span> ${data.cfNewHouse.propertyRight}年</li>
-										</ul>
-									</div>
-									<div style="width:50%;margin-top: 30px;">
-										<ul>
-											<li><span>售楼地址:</span> ${data.cfNewHouse.salesAddress}</li>
-											<li><span>楼盘区域:</span> ${data.cfNewHouse.estateDistrict}</li>
-											<li><span>楼盘地址:</span> ${data.cfNewHouse.estateAddress}</li>
-											<li><span>售楼电话:</span> ${data.cfNewHouse.saleHousePhone}</li>
-											<li><span>总户数:</span> ${data.cfNewHouse.totalHouseholds}</li>
-											<li><span>价格:</span> 约${data.cfNewHouse.unitPrice}元/m²</li>
-											<li><span>开盘时间:</span> ${data.cfNewHouse.openTime}</li>
-											<li><span>交付时间:</span> ${data.cfNewHouse.deliveryTime}</li>
-										</ul>
-									</div>`
+					<ul>
+						<li><span>占地面积:</span> ${data.cfNewHouse.floorSpace} m²</li>
+						<li><span>建筑面积:</span>  ${data.cfNewHouse.floorArea} m²</li>
+						<li><span>绿化率:</span> ${data.cfNewHouse.greeningRate}%</li>
+						<li><span>容积率:</span> ${data.cfNewHouse.plotRatio}%</li>
+						<li><span>总户数:</span> ${data.cfNewHouse.totalHouseholds}个</li>
+						<li><span>车位:</span> ${data.cfNewHouse.carport}个</li>
+						<li><span>物业类型:</span> ${data.cfNewHouse.tenementSituation}</li>
+						<li><span>装修描述:</span> ${data.cfNewHouse.decorationDescribe}</li>
+						<li><span>产权:</span> ${data.cfNewHouse.propertyRight}年</li>
+					</ul>
+				</div>
+				<div style="width:50%;margin-top: 30px;">
+					<ul>
+						<li><span>售楼地址:</span> ${data.cfNewHouse.salesAddress}</li>
+						<li><span>楼盘区域:</span> ${data.cfNewHouse.estateDistrict}</li>
+						<li><span>楼盘地址:</span> ${data.cfNewHouse.estateAddress}</li>
+						<li><span>售楼电话:</span> ${data.cfNewHouse.saleHousePhone}</li>
+						<li><span>总户数:</span> ${data.cfNewHouse.totalHouseholds}</li>
+						<li><span>价格:</span> 约${data.cfNewHouse.unitPrice}元/m²</li>
+						<li><span>开盘时间:</span> ${data.cfNewHouse.openTime}</li>
+						<li><span>交付时间:</span> ${data.cfNewHouse.deliveryTime}</li>
+					</ul>
+				</div>`
 				$("#xiangqingBox").append(dataInfoDiv)
+				
+				  // var x= document.querySelector('#xiangqingBox').innerHTML
+				 // x= x.replace("${data.cfNewHouse.floorSpace}",data.cfNewHouse.floorSpace)
+				 // document.querySelector('.sdf').innerHTML=x
+				 
+				 
+				  // data.cfNewHouse.forEach(v=>{
+					 //  console.log(v)
+				  // })
+				 // document.querySelector('.sdf').innerHTML=y
+				  
+				  
 			}
 		})
 		
