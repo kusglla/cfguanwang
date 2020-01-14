@@ -175,28 +175,8 @@
 			<div style="text-align: center;"><button type="button" class="layui-btn layui-btn-primary  layui-btn-lg index-seeMore" onclick="onMore()">查看更多>></button></div>
 		</div>
 	</div>
-	<!-- 优选新房end -->
-	
-	<!-- <footer class="index-footer" >
-		<div class="footer-center">
-			<div class="footer-title">佛山市采房有限公司</div>
-			<div style="padding-top: 20px;">
-				<a href="javascript：void(0)" target="_blank">关于我们</a> | 
-				<a href="javascript：void(0)" target="_blank">联系我们</a> |
-				<a href="javascript：void(0)" target="_blank">用户协议</a> | 
-				<a href="javascript：void(0)" target="_blank">友情链接</a> |
-				<a href="javascript：void(0)" target="_blank">广告服务</a> |
-				<a href="javascript：void(0)" target="_blank">用户须知</a> | 
-				<a href="javascript：void(0)" target="_blank">异常反馈</a> |
-				<a href="javascript：void(0)" target="_blank">营业执照</a>
-			</div>
-			<div class="footer-foot">
-				Copyright©2019 粤ICP备19025915号
-			</div>
-		</div>
-	</footer> -->
 	<!-- 页脚 -->
-	<iframe   MARGINWIDTH=0 MARGINHEIGHT=0 HSPACE=0 VSPACE=0 FRAMEBORDER=0 SCROLLING=no src="./pages/footer.html" height="250px" width="120%" class="iframe"></iframe>
+	<iframe   MARGINWIDTH=0 MARGINHEIGHT=0 HSPACE=0 VSPACE=0 FRAMEBORDER=0 SCROLLING=no src="./pages/footer.html" height="250px" width="100%" class="iframe" style="position:relative;bottom:0;left:0;min-width:1184px;"></iframe>
 </body>
 
 <script src="./lib/jquery3.41.js" type="text/javascript" charset="utf-8"></script>
@@ -236,228 +216,232 @@
 	
 	//登录框
 	function login(){
-		layui.use('layer', function(){
-		  var layer = layui.layer;
-		  layer.open({
-			title:"用户登录",  
-		    type: 1, 
-		    content: `
-				<form class="layui-form" action="#" style="height: 360px; width: 360px;"> 
-					<div class="layui-form-item login-line">
-						<label class="layui-form-label">手机号</label>
-						<div class="layui-input-block">
-							<input type="text" name="phone" maxlength="11" lay-verify="required|phone maxlength="11" id="longinPhone" placeholder="请输入您的手机号" autocomplete="off" class="layui-input">
-						</div>
-					</div>
-				    <div class="layui-form-item login-line">
-						<label class="layui-form-label">短信验证码</label>
-						  <div class="layui-input-block">
-							<input type="text" name="code" maxlength="6" placeholder="请输入短信验证码" autocomplete="off" class="layui-input">
-							<button type="button" id="loginBtnText" class="layui-btn layui-btn-primary" onclick="getLoginCode()">获取验证码</button>
-						</div>
-				    </div>
-					<div class="layui-input-block">
-					    <button class="layui-btn layui-btn-warm" lay-submit lay-filter="loginFrom">立即登录</button>
-					</div>
-					<a style="display: flex;justify-content: flex-end; margin-right:50px" href="http://925029931.com" target="_blank">经纪人登录</a>
-				</form>
-			`
-		  });
-		});              
-	}
-	
-	// 注册框
-	function register(){
-		layui.use('layer', function(){
-		  var layer = layui.layer;
-		  // layer.title('牛皮膏药',1),
-		  layer.open({
-			title:"用户注册",
-		    type: 1, 
-		    content: `<form class="layui-form" action="#" style="height: 360px; width: 360px;">
-						<div class="layui-form-item login-line">
-							<label class="layui-form-label">用户名/姓名</label>
-							  <div class="layui-input-block">
-								<input type="text" name="number" maxLength="12" placeholder="姓名" lay-verify="required" autocomplete="off" class="layui-input">
-							</div>
-						</div>
-						
-						<div class="layui-form-item">
-							<label class="layui-form-label">密码</label>
-							  <div class="layui-input-block">
-								<input type="password" maxLength="12" name="password" placeholder="密码" lay-verify="required|number"   autocomplete="off" class="layui-input">
-							</div>
-						</div>
-						
+			layui.use('layer', function(){
+			  var layer = layui.layer;
+			  layer.open({
+				title:"用户登录",  
+			    type: 1, 
+			    content: `
+					<form class="layui-form" action="#" style="height: 360px; width: 360px;"> 
 						<div class="layui-form-item login-line">
 							<label class="layui-form-label">手机号</label>
-							  <div class="layui-input-block">
-								<input type="text" name="phone" maxLength="11" placeholder="手机号" lay-verify="required|phone" id="phoneNum" autocomplete="off" class="layui-input">
+							<div class="layui-input-block">
+								<input type="text" name="phone" maxlength="11" lay-verify="required|phone maxlength="11" id="longinPhone" placeholder="请输入您的手机号" autocomplete="off" class="layui-input">
 							</div>
 						</div>
-						
-						<label class="layui-form-label">短信验证码</label>
-						  <div class="layui-input-block">
-							<input type="text" name="code" maxLength="6" placeholder="请输入短信验证码" maxlength="6" autocomplete="off" class="layui-input">
-							<button type="button" class="layui-btn layui-btn-primary" id="registerBtnText" onclick="getRegisterCode()">获取验证码</button>
+					    <div class="layui-form-item login-line">
+							<label class="layui-form-label">短信验证码</label>
+							  <div class="layui-input-block">
+								<input type="text" name="code" maxlength="6" placeholder="请输入短信验证码" autocomplete="off" class="layui-input">
+								<button type="button" id="loginBtnText" class="layui-btn layui-btn-primary" onclick="getLoginCode()">获取验证码</button>
+							</div>
+					    </div>
+						<div class="layui-input-block">
+						    <button class="layui-btn layui-btn-warm" lay-submit lay-filter="loginFrom">立即登录</button>
 						</div>
-						
-						<div class="layui-input-block" style="margin-top:10px">
-						    <button class="layui-btn layui-btn-warm" lay-submit lay-filter="registerForm" >一键注册/登录</button>
-						</div>
-					</form>`
-		  });
-		});              
-	};
-	
-	// 获取注册验证码
-	function getRegisterCode(){
-		var phone = $('#phoneNum').val();
-		if(!(/^1(3|4|5|6|7|8|9)\d{9}$/.test(phone))){
-		    alert("手机号码有误，请重填");  
-		}else{
-			$.ajax({
-				type:"post",
-				url: 'http://192.168.0.100:8080/cf-user/getRegisterCaptcha',
-				dataType:'json',
-				data:{"phone":phone},
-				success:function(res){
-					if(res.code == 200){
-						// 倒计时
-						let timedown = 60
-						$('#registerBtnText').text(`${timedown}s`)
-						let time = window.setInterval(function(){
-							if(timedown<=0){
-								clearInterval(time)
-								$('#registerBtnText').text(`重新获取验证码`)
-								return
-							}
-							timedown -= 1
+						<a style="display: flex;justify-content: flex-end; margin-right:50px" href="http://925029931.com" target="_blank">经纪人登录</a>
+					</form>
+				`
+			  });
+			});              
+		}
+		
+		// 注册框
+		function register(){
+			layui.use('layer', function(){
+			  var layer = layui.layer;
+			  // layer.title('牛皮膏药',1),
+			  layer.open({
+				title:"用户注册",
+			    type: 1, 
+			    content: `<form class="layui-form" action="#" style="height: 360px; width: 360px;">
+							<div class="layui-form-item login-line">
+								<label class="layui-form-label">用户名/姓名</label>
+								  <div class="layui-input-block">
+									<input type="text" name="number" placeholder="姓名" lay-verify="required" autocomplete="off" class="layui-input">
+								</div>
+							</div>
+							
+							<div class="layui-form-item login-line">
+								<label class="layui-form-label">手机号</label>
+								  <div class="layui-input-block">
+									<input type="text" name="phone" placeholder="手机号" maxLength="11" lay-verify="required|phone" id="phoneNum" autocomplete="off" class="layui-input">
+								</div>
+							</div>
+							
+							<div class="layui-form-item">
+								<label class="layui-form-label">密码</label>
+								  <div class="layui-input-block">
+									<input type="password" name="password" " maxLength="16" placeholder="密码" lay-verify="required|number"   autocomplete="off" class="layui-input">
+								</div>
+							</div>
+							
+							<label class="layui-form-label">短信验证码</label>
+							  <div class="layui-input-block">
+								<input type="text" name="code" placeholder="请输入短信验证码" maxlength="6" autocomplete="off" class="layui-input">
+								<button type="button" class="layui-btn layui-btn-primary" id="registerBtnText" onclick="getRegisterCode()">获取验证码</button>
+							</div>
+							
+							<div class="layui-input-block" style="margin-top:10px">
+							    <button class="layui-btn layui-btn-warm" lay-submit lay-filter="registerForm" >一键注册/登录</button>
+							</div>
+						</form>`
+			  });
+			});              
+		};
+		
+		// 获取注册验证码
+		function getRegisterCode(){
+			var phone = $('#phoneNum').val();
+			if(!(/^1(3|4|5|6|7|8|9)\d{9}$/.test(phone))){ 
+			    alert("手机号码有误，请重填");  
+			}else{
+				$.ajax({
+					type:"post",
+					url: serverUrl+'cf-user/getRegisterCaptcha',
+					dataType:'json',
+					data:{"phone":phone},
+					success:function(res){
+						if(res.code == 200){
+							//返回在验证码放到全局变量
+							msmCode = res.data
+							// 倒计时
+							let timedown = 60
 							$('#registerBtnText').text(`${timedown}s`)
-						},1000)
-					}else{
-						alert('获取失败')
+							let time = window.setInterval(function(){
+								if(timedown<=0){
+									clearInterval(time)
+									$('#registerBtnText').text(`重新获取验证码`)
+									return
+								}
+								timedown -= 1
+								$('#registerBtnText').text(`${timedown}s`)
+							},1000)
+						}else{
+							alert('获取失败')
+						}
 					}
-				}
-			});	
+				});	
+			}
 		}
-	}
-	
-	// 获取登录验证码
-	function getLoginCode(){
-		var phone = $('#longinPhone').val();
-		if(!(/^1(3|4|5|6|7|8|9)\d{9}$/.test(phone))){ 
-		    alert("手机号码有误，请重填");  
-		}else{
-			$.ajax({
-				type:"post",
-				url: serverUrl+'/cf-user/getLoginCaptcha',
-				dataType:'json',
-				data:{"phone":phone},
-				success:function(res){
-					if(res.code == 200){
-						// 倒计时
-						let timedown = 60
-						$('#loginBtnText').text(`${timedown}s`)
-						let time = window.setInterval(function(){
-							if(timedown<=0){
-								clearInterval(time)
-								$('#loginBtnText').text(`重新获取验证码`)
-								return
-							}
-							timedown -= 1
+		
+		// 获取登录验证码
+		function getLoginCode(){
+			var phone = $('#longinPhone').val();
+			if(!(/^1(3|4|5|6|7|8|9)\d{9}$/.test(phone))){ 
+			    alert("手机号码有误，请重填");  
+			}else{
+				$.ajax({
+					type:"post",
+					url: serverUrl+'/cf-user/getLoginCaptcha',
+					dataType:'json',
+					data:{"phone":phone},
+					success:function(res){
+						if(res.code == 200){
+							//返回在验证码放到全局变量
+							msmCode = res.data
+							// 倒计时
+							let timedown = 60
 							$('#loginBtnText').text(`${timedown}s`)
-						},1000)
-					}else{
-						alert('获取失败')
+							let time = window.setInterval(function(){
+								if(timedown<=0){
+									clearInterval(time)
+									$('#loginBtnText').text(`重新获取验证码`)
+									return
+								}
+								timedown -= 1
+								$('#loginBtnText').text(`${timedown}s`)
+							},1000)
+						}else{
+							alert('获取失败')
+						}
 					}
-				}
-			});	
+				});	
+			}
 		}
-	}
-	
-	// 注册表单校验
-	layui.use('form', function(){
-	  var form = layui.form;
-	  var layer = layui.layer;
-	  // 确定提交表单
-	  form.on('submit(registerForm)', function(data){
-		let number = data.field.number
-		let phone = data.field.phone
-		let password = data.field.password
-		let code =  data.field.code
-		console.log(`用户名:${number}+手机号:${phone}+验证码:${code}+ 密码:${password}`);
-	
-			$.ajax({
-				type:'post',
-				url: "http://192.168.0.100:8080/cf-user/register",
-				dataType:'json',
-				data:{
-					"number":number,
-					"phone":phone,
-					"password":password,
-					"code":code
-				},
-				// xhrFields: {
-				// 	withCredentials: false
-				// },
-				success:function(res){
-					if(res.code==200){
-						$('.login-box').children().empty()
-						$('.login-box').append(`<span onclick="myMsg()">${phone}</span> / <span onclick="Logout()">退出</span>`)
-						localStorage.setItem("phone", phone);
-						console.log(msmCode)
-						layer.closeAll();
-					}else{
-						alert("验证码错误")
+		
+		// 注册表单校验
+		layui.use('form', function(){
+		  var form = layui.form;
+		  var layer = layui.layer;
+		  // 确定提交表单
+		  form.on('submit(registerForm)', function(data){
+			let number = data.field.number
+			let phone = data.field.phone
+			let password = data.field.password
+			let code =  data.field.code
+			console.log(`用户名:${number}+手机号:${phone}+验证码:${code}+ 密码:${password}`);
+			if(msmCode!=code){
+				alert('验证码错误')
+			}else{
+				$.ajax({
+					type:'post',
+					url:serverUrl+"/cf-user/register",
+					dataType:'json',
+					data:{
+						"number":number,
+						"phone":phone,
+						"password":password,
+					},
+					xhrFields: {
+						withCredentials: false
+					},
+					success:function(res){
+						if(res.code==200){
+							$('.login-box').children().empty()
+							$('.login-box').append(`<span onclick="myMsg()">${phone}</span> / <span onclick="Logout()">退出</span>`)
+							localStorage.setItem("phone", phone);
+							console.log(msmCode)
+							layer.closeAll();
+						}
 					}
-				}
-			})
-		return false;
-	  });
-	});
-	
-	// 登录表单验证
-	layui.use('form', function(){
-	  var form = layui.form;
-	  var layer = layui.layer;
-	  // 确定提交表单
-	  form.on('submit(loginFrom)', function(data){
-		let phone = data.field.phone
-		let code =  data.field.code
-		console.log(`手机号:${phone}+验证码:${code}`);
-		if(msmCode!=code){
-			alert('验证码错误')
-		}else{
-			$.ajax({
-				type:'post',
-				url:serverUrl+"/cf-user/phoneLogin",
-				dataType:'json',
-				data:{
-					"phone":phone,
-				},
-				success:function(res){
-					if(res.code==200){
-						$('.login-box').children().empty()
-						$('.login-box').append(`<span onclick="myMsg()">${phone}</span> / <span onclick="Logout()">退出</span>`)
-						localStorage.setItem("phone", phone);
-						layer.closeAll();
+				})
+			}
+			return false;
+		  });
+		});
+		
+		// 登录表单校验
+		layui.use('form', function(){
+		  var form = layui.form;
+		  var layer = layui.layer;
+		  // 确定提交表单
+		  form.on('submit(loginFrom)', function(data){
+			let phone = data.field.phone
+			let code =  data.field.code
+			console.log(`手机号:${phone}+验证码:${code}`);
+			if(msmCode!=code){
+				alert('验证码错误')
+			}else{
+				$.ajax({
+					type:'post',
+					url:serverUrl+"/cf-user/phoneLogin",
+					dataType:'json',
+					data:{
+						"phone":phone,
+					},
+					success:function(res){
+						if(res.code==200){
+							$('.login-box').children().empty()
+							$('.login-box').append(`<span onclick="myMsg()">${phone}</span> / <span onclick="Logout()">退出</span>`)
+							localStorage.setItem("phone", phone);
+							layer.closeAll();
+						}
 					}
-				}
-			})
-		}
-		return false;
-	  });
-	});
-	
+				})
+			}
+			return false;
+		  });
+		});
+		
+		
 	//退出登录
 	function Logout(){
 		localStorage.removeItem("phone");　　
 		console.log('退出')
 		hasLogin()
 	}
-	
-	// 判断用户是有有登录
+	// 判断用户是否有登录
 	function hasLogin(){
 		var	phoneStorage = localStorage.getItem('phone')
 		if(phoneStorage!=null){
@@ -484,7 +468,7 @@
 			url:serverUrl+"/cf-new-house/findAll",
 			data:{
 				offset:1,
-				pagesize:8
+				pagesize:12
 			},
 			success:function(res){
 				console.log(res.data)
@@ -497,15 +481,14 @@
 					console.log(coverImg)
 					let divItem =`<div style="width: 265px;height: 270px;" onclick="detail(${item.cfNewHouse.id})">
 									<img src="${coverImg}" style="width: 265px;height: 205px; border-radius: 7px;" >
-									<div>${item.cfNewHouse.estateName}</div>
+									<div style="font-size:16px;padding: 3px 0px;font-weight:550">${item.cfNewHouse.estateName}</div>
 									<div style="display: flex;justify-content: space-between;">
-										<div style="font: 15px;color: #A8A8A8;">${item.cfNewHouse.estateDistrict}/3室2厅</div>
-										<div style="font: 20px;color: #00FF00;">${item.cfNewHouse.totalPrice}元起</div>
+										<div style="font: 15px;color: #A8A8A8;">${item.cfNewHouse.estateDistrict}</div>
+										<div style="font: 20px;color: red;">${item.cfNewHouse.totalPrice}元起</div>
 									</div>
 								</div>`
 					$('#YXhourse').append(divItem)
 				}
-				
 			}
 		})
 	}
@@ -514,11 +497,9 @@
 	function detail(e){
 		window.location.href = "./pages/detail.html?id="+e
 	}
-
 	function onMore(){
 		window.location.href = "./pages/more.html"
 	}
-
 
 	// 打开咨询弹框
 	function openKF(){

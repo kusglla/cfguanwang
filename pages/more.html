@@ -78,25 +78,28 @@
 		<div class="type-filter">
 			<ul>
 				<li>
-						<strong>位置</strong>
-						<input type="radio" name="city" value="禅城区" title="禅城区">禅城区
-						<input type="radio" name="city" value="南海区" title="南海区">南海区
-						<input type="radio" name="city" value="三水区" title="三水区">三水区
-						<input type="radio" name="city" value="高明区" title="高明区">高明区
-						<input type="radio" name="city" value="顺德区" title="顺德区">顺德区
+					<strong>位置</strong>
+					<input type="radio" name="city" value="不限" title="不限">不限
+					<input type="radio" name="city" value="禅城区" title="禅城区">禅城区
+					<input type="radio" name="city" value="南海区" title="南海区">南海区
+					<input type="radio" name="city" value="三水区" title="三水区">三水区
+					<input type="radio" name="city" value="高明区" title="高明区">高明区
+					<input type="radio" name="city" value="顺德区" title="顺德区">顺德区
 				</li>
 				<li>
 					<strong>总价</strong>
-					<input type="radio" name="price" value="100以下" title="100以下">100以下
-					<input type="radio" name="price" value="100-150万" title="100-150万">100-150万
-					<input type="radio" name="price" value="150-200万" title="150-200万">150-200万
-					<input type="radio" name="price" value="200-300万" title="200-300万">200-300万
-					<input type="radio" name="price" value="300-500万" title="200-300万">300-500万
-					<input type="radio" name="price" value="500万以上" title="500万以上">500万以上
+					<input type="radio" name="price" value="不限" title="不限">不限
+					<input type="radio" name="price" value="60以下" title="100以下">60以下
+					<input type="radio" name="price" value="60-80万" title="100-150万">60-80万
+					<input type="radio" name="price" value="80-100万" title="150-200万">80-100万
+					<input type="radio" name="price" value="100-150万" title="200-300万">100-150万
+					<input type="radio" name="price" value="150-200万" title="200-300万">150-200万
+					<input type="radio" name="price" value="200万以上" title="500万以上">200万以上
 				</li>
 				<li>
 					<strong>类型</strong>
-					<input type="radio" name="type" value="不限别墅" title="100不限别墅">不限别墅
+					<input type="radio" name="type" value="不限" title="100不限别墅">不限
+					<input type="radio" name="type" value="别墅" title="100别墅">别墅
 					<input type="radio" name="type" value="住宅" title="住宅">住宅
 					<input type="radio" name="type" value="公寓" title="公寓">公寓
 					<input type="radio" name="type" value="商铺" title="200-300万">商铺
@@ -118,9 +121,8 @@
 		</div>
 		<!-- 分页 -->
 		<!-- 页脚 -->
-		<iframe  MARGINWIDTH=0 MARGINHEIGHT=0 HSPACE=0 VSPACE=0 FRAMEBORDER=0 SCROLLING=no src="footer.html" height="250px" width="100%"></iframe>
+		<iframe  MARGINWIDTH=0 MARGINHEIGHT=0 HSPACE=0 VSPACE=0 FRAMEBORDER=0 SCROLLING=no src="footer.html" height="250px" width="100%" class="iframe" style="position:relative;bottom:0;left:0;min-width:1184px;"></iframe>
 	</body>
-	
 	<script src="../lib/jquery3.41.js" type="text/javascript" charset="utf-8"></script>
 	<script src="../layui-v2.5.5/layui/layui.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript">
@@ -131,60 +133,76 @@
 		}
 		
 		// 分类
-		// $("input[type='radio']").on("click",function(){
+		$("input[type='radio']").on("click",function(){
+			let type = $(this).val()
+			console.log($(this).val());
 			
-			
-		// 	let type = $(this).val()
-		// 	console.log($(this).val());
-		// 	$.ajax({
-		// 		type:'post',
-		// 		url: serverUrl + '/cf-new-house/findAll',
-		// 		data:{
-		// 		"offset": (e.curr),
-		// 		"pagesize": e.limit-2
-		// 		},
-		// 		success:function(res){
-		// 		console.log(res.data)
-		// 			$('#hourseCount').text(res.data.length)
-		// 			$("#orderList").empty();
+			// tenementSituation  //类型
+			// estateDistrict		//区域
+			// totalPrice		//总价
+
+			// $.ajax({
+			// 	type:'post',
+			// 	url: serverUrl + '/cf-new-house/findAll',
+			// 	data:{
+			// 	"offset": (e.curr),
+			// 	"pagesize": e.limit-2
+			// 	},
+			// 	success:function(res){
+			// 	console.log(res.data)
+			// 		$('#hourseCount').text(res.data.length)
+			// 		$("#orderList").empty();
 					
-		// 			for(let item of res.data){
-		// 				let	orderItem = `<div class="order-item" onclick="ondetail(${item.cfNewHouse.id})">
-		// 									<div style="width: 232px; height: 200px;"><img style="width: 100%;height: 100%;" src="../img/6f51344f46a796a86e999680fa60348.jpg" ></div>
-		// 									<div style="width: 480px; margin-left: 35px;">
-		// 										<h2>${item.cfNewHouse.estateName}</h2>
-		// 										<p>面积:  77-139平方</p>
-		// 										<p>户型: 3室-4室</p>
-		// 										<p>地址: ${item.cfNewHouse.salesAddress}</p>
-		// 									</div>
-		// 									<div style="width: 150px;">
-		// 										${item.cfNewHouse.unitPrice}元/平方
-		// 									</div>
-		// 								</div>`
-		// 				$('#orderList').append(orderItem)
-		// 			}
-		// 		}
-		// 	})
-		// })
-		
+			// 		for(let item of res.data){
+			// 			let	orderItem = `<div class="order-item" onclick="ondetail(${item.cfNewHouse.id})">
+			// 								<div style="width: 232px; height: 200px;"><img style="width: 100%;height: 100%;" src="../img/6f51344f46a796a86e999680fa60348.jpg" ></div>
+			// 								<div style="width: 480px; margin-left: 35px;">
+			// 									<h2>${item.cfNewHouse.estateName}</h2>
+			// 									<p>面积:  77-139平方</p>
+			// 									<p>户型: 3室-4室</p>
+			// 									<p>地址: ${item.cfNewHouse.salesAddress}</p>
+			// 								</div>
+			// 								<div style="width: 150px;">
+			// 									${item.cfNewHouse.unitPrice}元/平方
+			// 								</div>
+			// 							</div>`
+			// 			$('#orderList').append(orderItem)
+			// 		}
+			// 	}
+			// })
+		})
 		
 		//分页
+		var count = ''
+		$.ajax({
+		  type:'post',
+		  async:false,
+		  url: serverUrl + '/cf-new-house/findAll',
+		  data:{
+			   "offset": 1,
+			   "pagesize": 1
+		  },
+		  success:function(res){
+				count = res.count
+				console.log(count)
+		  }
+		})
+		
+		
 		layui.use('laypage', function(){
 		  var laypage = layui.laypage;
 			laypage.render({
 				elem: 'test1' 
-				,count: 12, 
-				groups:2,
+				,count: count,
 				jump:function(e,first){
 					$.ajax({
 						type:'post',
 						url: serverUrl + '/cf-new-house/findAll',
 						data:{
 						   "offset": (e.curr),
-						   "pagesize": (e.limit-2)
+						   "pagesize": (e.limit)
 						},
 						success:function(res){
-						   console.log(res)
 							$('#hourseCount').text(res.count)
 							$("#orderList").empty();
 							for(let item of res.data){
@@ -211,39 +229,6 @@
 	   
 		
 		
-		$(function(){
-				   // $.ajax({
-					  //  type:'post',
-					  //  url: serverUrl + '/cf-new-house/findAll',
-					  //  data:{
-						 //   "offset": (e.curr),
-						 //   "pagesize": e.limit-2
-					  //  },
-					  //  success:function(res){
-						 //   console.log(res.data)
-							// $('#hourseCount').text(res.count)
-							// $("#orderList").empty();
-						   	
-							// for(let item of res.data){
-						 //   		let	orderItem = `<div class="order-item" onclick="ondetail(${item.cfNewHouse.id})">
-						 //   							<div style="width: 232px; height: 200px;"><img style="width: 100%;height: 100%;" src="../img/6f51344f46a796a86e999680fa60348.jpg" ></div>
-						 //   							<div style="width: 480px; margin-left: 35px;">
-						 //   								<h2>${item.cfNewHouse.estateName}</h2>
-						 //   								<p>面积:  77-139平方</p>
-						 //   								<p>户型: 3室-4室</p>
-						 //   								<p>地址: ${item.cfNewHouse.salesAddress}</p>
-						 //   							</div>
-						 //   							<div style="width: 150px;">
-						 //   								${item.cfNewHouse.unitPrice}元/平方
-						 //   							</div>
-						 //   						</div>`
-						 //   		$('#orderList').append(orderItem)
-								
-								
-						 //   	}
-						   	
-					  //  }
-				   // })
-		})
+		
 	</script>
 </html>

@@ -184,7 +184,7 @@
 				
 			</div>
 		</div>
-		<!-- 户型图end -->
+		<!-- 户型介绍end -->
 		
 		
 		<!-- 经纪人顾问 -->
@@ -240,7 +240,7 @@
 		<!-- 楼盘信息end -->
 		
 		<!-- 页脚 -->
-		<iframe  MARGINWIDTH=0 MARGINHEIGHT=0 HSPACE=0 VSPACE=0 FRAMEBORDER=0 SCROLLING=no src="footer.html" height="250px" width="120%"></iframe>
+		<iframe  MARGINWIDTH=0 MARGINHEIGHT=0 HSPACE=0 VSPACE=0 FRAMEBORDER=0 SCROLLING=no src="footer.html" height="250px" width="100%"></iframe>
 		<!-- 页脚end -->
 	</body>
 </html>
@@ -254,7 +254,6 @@
 
 
 	$(function(){
-		console.log('2')
 		var id = $.query.get("id") || "";
 		console.log(id)
 		$.ajax({
@@ -263,12 +262,13 @@
 			data:{id:id},
 			success:function(res){
 				var data = res.data
+				console.log(data)
+				
 				var cfEffectImgs   = data.cfEffectImgs		//效果图集
 				var cfSceneryImgs  = data.cfSceneryImgs		//实景图集
 				var cfTemplateImgs = data.cfTemplateImgs		//样板图集
 				var cfLocationImgs = data.cfLocationImgs		//区位图集
-				// console.log(data)
-				
+				var cfHouseTypesResp = data.cfHouseTypesResp
 				
 				
 				/*----------------------------------------效果图轮播渲染----------------------------------------------*/
@@ -338,7 +338,6 @@
 				});
 				
 				/*-------------------------------楼盘介绍渲染--------------------------------*/
-							
 				let  infoRight = `<div>
 									<div style="display:flex">
 										<span style="height:50px;font-size:3.2em;height: 50px;font-weight: 600;color: rgb(105,105,105);">${data.cfNewHouse.estateName}</span>
@@ -362,7 +361,7 @@
 										</div>
 									</div>
 									
-									<p><span>户型:</span> <span style="font-size: 18px;">89m²(三居)、103m²(三居)、108m²(四居)</span></p>
+									<p id="hxText"><span>户型:</span> </p>
 									<p><span>描述:</span> <span style="font-size: 18px;">${data.cfNewHouse.decorationDescribe}</span></p>
 									<p><span>地址:</span> <span style="font-size: 18px;">${data.cfNewHouse.salesAddress}</span></p>
 									
@@ -380,18 +379,22 @@
 				$('#infoRight').append(infoRight)
 				
 				
+				
 				// 户型介绍渲染
-				for(let item of data.cfHouseTypesResp){
+				for(let item of cfHouseTypesResp){
 					let  hxIntroduceDiv =	`<div style="width: 205px;height: 340px;border: 1px solid #e4e6f0; margin-left: 25px;">
 											<img src="${item.cfHouseTypeImgs[0].houseTypeImg}"  style="height: 50%;width: 100%;">
 											<div style="padding-left: 3px;line-height: 25px; padding: 16px 8px;">
-												<p style="font-size: 14px; font-weight: 700">${item.room}室 ${item.hall}厅 ${item.toilet}卫</p>
+												<p style="font-size: 14px; font-weight: 700">${item.room}房 ${item.hall}厅 ${item.toilet}卫</p>
 												<p style="color: #9399a5;font-size: 14px;">建面 ${item.area}²</p>
-												<p style="margin-bottom: 5px;font-size: 16px;color: #fa5741;">约196万/套</p>
+												<p style="margin-bottom: 5px;font-size: 16px;color: #fa5741;">约${(item.area*data.cfNewHouse.unitPrice)/10000 }万/套</p>
 											</div>
 										</div>`
 					$('#hx-introduce').append(hxIntroduceDiv)		
-					console.log(item)
+					
+					
+					let hxText = `<span>${item.area}m²</span><span>(${item.hall}房)</span>    `
+					$('#hxText').append(hxText)
 				}
 				
 				
