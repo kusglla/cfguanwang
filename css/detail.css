@@ -94,14 +94,18 @@ html,body{
 			#loginBtnText, #registerBtnText {
 			    margin: 20px 0!important;
 			}
-			#xcxImgs {
-			    position: absolute;
-			    height: 100px;
-			    width: 100px;
-			    background: red;
-			    right: 155px;
-			    top: 65px;
-			    display: none;
+			#xcxImgs{
+			       position: absolute;
+			       height: 100px;
+			       width: 100px;
+			       background: red;
+			       right: 575px;
+			       top: 65px;
+			       display: none;
+			}
+			.topNav>.topNav-right>.topNav-line>#xcxImgs>img {
+			    height: 100%;
+			    width: 100%;
 			}
 			/****路径和搜索页面******/
 			
