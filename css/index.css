@@ -193,6 +193,7 @@ html,body{
 	opacity: 0.8;
 	transform:scale(1.2);
 }
+
 /* 经纪人推建 */
 .index-agent{
 	background: rgb(247,247,247);
@@ -227,6 +228,12 @@ html,body{
 }
 .index-agent-box>ul>li>.index-agent-center{
 	text-align: center;
+	cursor: pointer;
+	height:100%;
+	transition: 0.8s;
+}
+.index-agent-box>ul>li>.index-agent-center:hover{
+	transform: rotateY(360deg);
 }
 .index-agent-box>ul>li>.index-agent-center>img{
 	height: 80px;
@@ -239,11 +246,6 @@ html,body{
 }
 .index-agent-box>ul>li>.index-agent-type{
 	padding: 20px 0px;
-}
-.index-agent-box>ul>li{
-	height: 308px;
-	width: 228px;
-	background: url('https://fs.esf.fangdd.com/efab/FizVBExbKvtdHNateMb9834G1zp1.png') no-repeat;
 }
 /* 优选新房 */
 .index-optimization{

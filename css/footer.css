@@ -5,9 +5,9 @@
 	text-decoration: none;
 	list-style: none;
 }
-.navbar-fixed-bottom{
+.add-footer{
 	height: 200px;
-	width: 100%;
+	width:120%;
 	background-color: #ddd;
 	position: fixed;
 	bottom: 0;
@@ -19,6 +19,7 @@
 	text-align:left;
 	margin-left:5%;
 }
+
 .add-footer{
   background:url(../img/bg-footer.png) center center;
   background-size:100% 100%;
@@ -51,6 +52,11 @@
 	color:#fff;
 	padding:25px 15px;
 	text-decoration: none;
+}
+.footer-link{
+	color:#fff;
+	padding:25px 15px;
+   	display:inline-block;
 }
 .footer-top>.nav-pills>li>a:hover{
 	color:#bbb;
