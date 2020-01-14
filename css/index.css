@@ -1,5 +1,6 @@
 html,body{
 			width: 100%;
+			min-width: 1178px;
 		}
 		
 		/* 顶部导航栏 */
@@ -95,11 +96,12 @@ html,body{
 #test1  .carousel-imgs{
 	background: url(../img/bannar1.jpg) no-repeat;
 	background-size: cover;
+	background-position: center center;
 }
-
 #test1  .carousel-imgs1{
 	background: url(../img/bannar2.jpg) no-repeat;
 	background-size: cover;
+	background-position: center center;
 }
 
 .topNav{
@@ -173,8 +175,8 @@ html,body{
 }
 .index-seeMore{
 	margin-top: 16px;
-	    font-size: 15px;
-	    color: #4e4e4e;
+	font-size: 15px;
+	color: #4e4e4e;
 }
 .index-newHouse-son1{
 	height: 50px;
@@ -183,8 +185,13 @@ html,body{
 .hotHourseImg-box>ul>li>img{
 	width:100%;
 	height:100%;
-	background: url(../img/index-content.jpg) ;
-	background-size:100% 100%;
+	/* background: url(../img/index-content.jpg) center center;
+	background-size:100% 100%; */
+	overflow: hidden;
+}
+.hotHourseImg-box>ul>li:hover .hotHourseImg{
+	opacity: 0.8;
+	transform:scale(1.2);
 }
 /* 经纪人推建 */
 .index-agent{

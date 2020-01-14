@@ -3,9 +3,13 @@
 	<head>
 		<meta charset="utf-8">
 		<title>关于采房</title>
+		<link rel="stylesheet" type="text/css" href="../../css/index.css"/>
 		<link rel="stylesheet" href="../../css/about.css">
 	</head>
 	<body>
+	<!--导航栏--->	
+	<iframe  MARGINWIDTH=0 MARGINHEIGHT=0 HSPACE=0 VSPACE=0 FRAMEBORDER=0 SCROLLING=no src="../header.html" height="auto " width="100%" class="clickbox"></iframe>	
+	
 	<div class="about-content">
 		<h1 class="about-title">关于采房</h1>
 		<div class="about-box-line">
@@ -22,6 +26,22 @@
 	</div>
 		
 	<!-- 页脚 -->
-	<iframe  MARGINWIDTH=0 MARGINHEIGHT=0 HSPACE=0 VSPACE=0 FRAMEBORDER=0 SCROLLING=no src="../footer.html" height="200px" width="100%"></iframe>	
+	<iframe  MARGINWIDTH=0 MARGINHEIGHT=0 HSPACE=0 VSPACE=0 FRAMEBORDER=0 SCROLLING=no src="../footer.html" height="250px" width="100%"></iframe>	
+	<script src="../../lib/jquery3.41.js"></script>
+	<script>
+		 layui.use('layer', function(){
+		    var layer = layui.layer; 
+		 });
+		 var index;
+		     $(".clickbox").bind("click",function(){
+		               index = parent.layer.open({ //在父窗口打开
+		                         type: 3,
+		                               content: ""
+		               });
+		                  setTimeout(function(){
+		                   parent.layer.close(index);
+		               },5000);
+		     });
+	</script>
 	</body>
 </html>

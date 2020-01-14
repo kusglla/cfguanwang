@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link rel="stylesheet" type="text/css" href="./layui-v2.5.5/layui/css/layui.css" media="all"/>
 	<link rel="stylesheet" href="css/index.css">
-	<title>采房</title>
+	<title>新房网_佛山房产_佛山楼盘_佛山新房_佛山房价_佛山买房【采房网】</title>
 	<style type="text/css">
 	</style>
 </head>
@@ -18,21 +18,23 @@
 	  </div>
 	 <!-- 导航栏		 -->	
 	 <!-- <iframe  MARGINWIDTH=0 MARGINHEIGHT=0 HSPACE=0 VSPACE=0 FRAMEBORDER=0 SCROLLING=no src="./pages/header.html" height="100px" width="100%" style="position:absolute; top:-2px;color:#000;"></iframe> -->
+	 
 	<div class="topNav">
-	 		    <div class="topNav-left">
-	 				<img src="img/logo.png" class="topNav-img">	
-	 			</div>		
-	 			<div class="topNav-right">
-	 				<div class="topNav-line" >
-	 					<a href="javascript:void(0);">新房</a>|
-	 					<a href="javascript:void(0);" id="xcx">小程序</a>
-	 					<div id="xcxImgs">
-	 						<img src="img/ewm.jpg" >
-	 					</div>
-	 				</div>
-	 					<img src="img/login-icon.png" class="login-icon">
-	 					<div class="login-box"></div>
-	 			</div>	
+	 	<div class="topNav-left">
+	 		<img src="img/logo.png" class="topNav-img">	
+	 	</div>		
+	 	<div class="topNav-right">
+	 		<div class="topNav-line" >
+	 			<a href="javascript:void(0);">新房</a>|
+	 			<a href="javascript:void(0);" id="xcx">小程序</a>
+
+	 			<div id="xcxImgs">
+	 				<img src="img/ewm.jpg" >
+	 			</div>
+	 		</div>
+	 			<img src="img/login-icon.png" class="login-icon">
+	 			<div class="login-box"></div>
+	 	</div>	
 	 </div>
 	</div>
 	
@@ -46,23 +48,15 @@
 				</div>
 				<div ><a href="./pages/more.html" class="index-seeMore">查看更多>></a></div>
 			</div>
-			
-			<!-- <div class="index-newHouse-son1">
-				<button type="button" class="layui-btn layui-btn-primary">桂城</button>
-				<button type="button" class="layui-btn layui-btn-primary">朝安</button>
-				<button type="button" class="layui-btn layui-btn-primary">三水</button>
-				<button type="button" class="layui-btn layui-btn-primary">桂城</button>
-				<button type="button" class="layui-btn layui-btn-primary">千灯湖</button>
-			</div> -->
-		</div>
-		<div class="hotHourseImg-box">
-			<ul>
-				<li><img></li>
-				<li><img ></li>
-				<li><img ></li>
-			</ul>
 		</div>
 		
+		<div class="hotHourseImg-box">
+			<ul>
+				<li><img src="img/index-content.jpg" class="hotHourseImg"></li>
+				<li><img src="img/index-content.jpg" class="hotHourseImg"></li>
+				<li><img src="img/index-content.jpg" class="hotHourseImg"></li>
+			</ul>
+		</div>
 	</div>
 	<!-- 热卖新房end -->
 	
@@ -164,25 +158,26 @@
 	<!-- 经纪人推荐--->
 	
 	<!-- 优选新房 -->
-	<div class="index-optimization">
-		<div>
-			<div class="index-optimization-newHose">
-				<div>
-					<span class="index-optimization-newHose-type">优选新房</span> 
-					<span class="index-newHouseSpecial">优先新房为你推荐</span>
+	<div style="width: 100%;">
+		<div class="index-optimization">
+			<div>
+				<div class="index-optimization-newHose">
+					<div>
+						<span class="index-optimization-newHose-type">优选新房</span> 
+						<span class="index-newHouseSpecial">优先新房为你推荐</span>
+					</div>
 				</div>
-				<div ><a href="./pages/more.html" class="index-seeMore">查看更多>> </a></div>
 			</div>
+			<div id="YXhourse">
+				
+				
+			</div>
+			<div style="text-align: center;"><button type="button" class="layui-btn layui-btn-primary  layui-btn-lg index-seeMore" onclick="onMore()">查看更多>></button></div>
 		</div>
-		<div id="YXhourse">
-			
-			
-		</div>
-		<div style="text-align: center;"><button type="button" class="layui-btn layui-btn-primary  layui-btn-lg index-seeMore">查看更多>></button></div>
 	</div>
 	<!-- 优选新房end -->
 	<!-- 页脚 -->
-	<iframe  MARGINWIDTH=0 MARGINHEIGHT=0 HSPACE=0 VSPACE=0 FRAMEBORDER=0 SCROLLING=no src="./pages/footer.html" height="200px" width="100%"></iframe>
+	<iframe  MARGINWIDTH=0 MARGINHEIGHT=0 HSPACE=0 VSPACE=0 FRAMEBORDER=0 SCROLLING=no src="./pages/footer.html" height="250px" width="100%"></iframe>
 	<!-- <footer class="index-footer" >
 		<div class="footer-center">
 			<div class="footer-title">佛山市采房有限公司</div>
@@ -201,6 +196,7 @@
 			</div>
 		</div>
 	</footer> -->
+	
 </body>
 
 <script src="./lib/jquery3.41.js" type="text/javascript" charset="utf-8"></script>
@@ -282,27 +278,27 @@
 						<div class="layui-form-item login-line">
 							<label class="layui-form-label">用户名/姓名</label>
 							  <div class="layui-input-block">
-								<input type="text" name="number" placeholder="姓名" lay-verify="required" autocomplete="off" class="layui-input">
-							</div>
-						</div>
-						
-						<div class="layui-form-item login-line">
-							<label class="layui-form-label">手机号</label>
-							  <div class="layui-input-block">
-								<input type="text" name="phone" placeholder="手机号" lay-verify="required|phone" id="phoneNum" autocomplete="off" class="layui-input">
+								<input type="text" name="number" maxLength="12" placeholder="姓名" lay-verify="required" autocomplete="off" class="layui-input">
 							</div>
 						</div>
 						
 						<div class="layui-form-item">
 							<label class="layui-form-label">密码</label>
 							  <div class="layui-input-block">
-								<input type="text" name="password" placeholder="密码" lay-verify="required|number"   autocomplete="off" class="layui-input">
+								<input type="password" maxLength="12" name="password" placeholder="密码" lay-verify="required|number"   autocomplete="off" class="layui-input">
+							</div>
+						</div>
+						
+						<div class="layui-form-item login-line">
+							<label class="layui-form-label">手机号</label>
+							  <div class="layui-input-block">
+								<input type="text" name="phone" maxLength="11" placeholder="手机号" lay-verify="required|phone" id="phoneNum" autocomplete="off" class="layui-input">
 							</div>
 						</div>
 						
 						<label class="layui-form-label">短信验证码</label>
 						  <div class="layui-input-block">
-							<input type="text" name="code" placeholder="请输入短信验证码" maxlength="6" autocomplete="off" class="layui-input">
+							<input type="text" name="code" maxLength="6" placeholder="请输入短信验证码" maxlength="6" autocomplete="off" class="layui-input">
 							<button type="button" class="layui-btn layui-btn-primary" id="registerBtnText" onclick="getRegisterCode()">获取验证码</button>
 						</div>
 						
@@ -317,18 +313,16 @@
 	// 获取注册验证码
 	function getRegisterCode(){
 		var phone = $('#phoneNum').val();
-		if(!(/^1(3|4|5|6|7|8|9)\d{9}$/.test(phone))){ 
+		if(!(/^1(3|4|5|6|7|8|9)\d{9}$/.test(phone))){
 		    alert("手机号码有误，请重填");  
 		}else{
 			$.ajax({
 				type:"post",
-				url: serverUrl+'cf-user/getRegisterCaptcha',
+				url: 'http://192.168.0.100:8080/cf-user/getRegisterCaptcha',
 				dataType:'json',
 				data:{"phone":phone},
 				success:function(res){
 					if(res.code == 200){
-						//返回在验证码放到全局变量
-						msmCode = res.data
 						// 倒计时
 						let timedown = 60
 						$('#registerBtnText').text(`${timedown}s`)
@@ -362,8 +356,6 @@
 				data:{"phone":phone},
 				success:function(res){
 					if(res.code == 200){
-						//返回在验证码放到全局变量
-						msmCode = res.data
 						// 倒计时
 						let timedown = 60
 						$('#loginBtnText').text(`${timedown}s`)
@@ -395,21 +387,20 @@
 		let password = data.field.password
 		let code =  data.field.code
 		console.log(`用户名:${number}+手机号:${phone}+验证码:${code}+ 密码:${password}`);
-		if(msmCode!=code){
-			alert('验证码错误')
-		}else{
+	
 			$.ajax({
 				type:'post',
-				url:serverUrl+"/cf-user/register",
+				url: "http://192.168.0.100:8080/cf-user/register",
 				dataType:'json',
 				data:{
 					"number":number,
 					"phone":phone,
 					"password":password,
+					"code":code
 				},
-				xhrFields: {
-					withCredentials: false
-				},
+				// xhrFields: {
+				// 	withCredentials: false
+				// },
 				success:function(res){
 					if(res.code==200){
 						$('.login-box').children().empty()
@@ -417,10 +408,11 @@
 						localStorage.setItem("phone", phone);
 						console.log(msmCode)
 						layer.closeAll();
+					}else{
+						alert("验证码错误")
 					}
 				}
 			})
-		}
 		return false;
 	  });
 	});
@@ -522,6 +514,11 @@
 	function detail(e){
 		window.location.href = "./pages/detail.html?id="+e
 	}
+
+	function onMore(){
+		window.location.href = "./pages/more.html"
+	}
+
 
 	// 打开咨询弹框
 	function openKF(){
