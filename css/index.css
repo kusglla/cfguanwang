@@ -77,8 +77,6 @@ html,body{
 			-webkit-transition: width 2s, height 2s, -webkit-transform 2s;
 			-o-transition: width 2s, height 2s,-o-transform 2s;
 		}
-		
-		
 		li{
 			list-style: none;
 		}
@@ -222,6 +220,12 @@ html,body{
 }
 .index-agent-box>ul>li>.index-agent-center{
 	text-align: center;
+	cursor: pointer;
+	height:100%;
+	transition: 0.8s;
+}
+ .index-agent-box>ul>li>.index-agent-center:hover{
+	transform: rotateY(360deg);
 }
 .index-agent-box>ul>li>.index-agent-center>img{
 	height: 80px;
