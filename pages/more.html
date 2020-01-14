@@ -2,8 +2,11 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title></title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>新房网_佛山房产_佛山楼盘_佛山新房_佛山房价_佛山买房【采房网】</title>
 		<link rel="stylesheet" type="text/css" href="../layui-v2.5.5/layui/css/layui.css" media="all"/>
+		<link rel="stylesheet" href="../css/detail.css">
 		<style type="text/css">
 			html,body{
 				width: 100%;
@@ -21,7 +24,6 @@
 				display: inline-block;
 				width: 100px;
 			}
-			
 			.type-filter{
 				width: 1178px;
 				margin: auto;
@@ -59,19 +61,48 @@
 		</style>
 	</head>
 	<body>
+		<!--导航栏--->
+		<div class="detail-nav">
+			<div class="topNav">
+			 		    <div class="topNav-left">
+			 				<img src="../img/logo.png" class="topNav-img">	
+			 			</div>		
+			 			<div class="topNav-right">
+							<!-- 搜索栏 -->
+							<div class="detail-search">
+								<!-- <label for=""><img src="../img/logo.jpg"</label> -->
+								<form action="" class="layui-form">
+									<div class="layui-input-block">
+									    <input type="text" name="title" required  lay-verify="required" placeholder="输入楼盘名称" autocomplete="off" class="layui-input">
+									    <button type="button" class="layui-btn layui-btn-danger" >搜新房</button>
+									</div>
+								</form>
+							</div>
+			 				<div class="topNav-line" >
+			 					<!-- <a href="javascript:void(0);">别墅</a>|
+			 					<a href="javascript:void(0);">住宅</a>|
+			 					<a href="javascript:void(0);">公寓</a>|
+			 					<a href="javascript:void(0);">商铺</a>|
+			 					<a href="javascript:void(0);">写字楼</a>| -->
+								<a href="javascript:void(0);">新房</a>|
+			 					<a href="javascript:void(0);" id="xcx">小程序</a>|
+			 					<a href="javascript:void(0);" id="APP">APP</a>
+			 					<div id="xcxImgs">
+			 						<img src="../img/ewm.jpg" >
+			 					</div>
+			 				</div>
+			 					<img src="../img/login-icon.png" class="login-icon">
+			 					<div class="login-box"></div>
+			 			</div>	
+			 </div>
+		</div>
+		
 		<!-- 顶部导航栏 -->
 		<div style="width: 1178px; height: 40px; margin: auto; display: flex; justify-content: space-between; align-items: center;">
 			<div><a href="../index.html">首页</a> > <strong>新房</strong></div>
 			<div>服务热线400-009-9900</div>
 		</div>
 		<!-- 顶部导航栏end -->
-		
-		<!-- 搜索 -->
-		<div style="width: 1178px; margin: auto; display: flex; padding-top: 15px;">
-			<img src="../img/logo.jpg" style="width: 53px;height: 50px;">
-			<input type="text" name="title" required lay-verify="required" placeholder="输入楼盘名称或商圈、区域" style="padding: 25px" autocomplete="off" class="layui-input">    
-			<button type="button" class="layui-btn layui-btn-warm" style="height: 50px;">搜新房</button>
-		</div>
 		<!-- 搜索end -->
 		
 		<!-- 分类筛选 -->
@@ -121,10 +152,11 @@
 		</div>
 		<!-- 分页 -->
 		<!-- 页脚 -->
-		<iframe  MARGINWIDTH=0 MARGINHEIGHT=0 HSPACE=0 VSPACE=0 FRAMEBORDER=0 SCROLLING=no src="footer.html" height="250px" width="100%" class="iframe" style="position:relative;bottom:0;left:0;min-width:1184px;"></iframe>
+		<iframe  MARGINWIDTH=0 MARGINHEIGHT=0 HSPACE=0 VSPACE=0 FRAMEBORDER=0 SCROLLING=no src="footer.html" height="250px" width="100%" style="position:relative;bottom:0;left:0;min-width:1184px;"></iframe>
 	</body>
 	<script src="../lib/jquery3.41.js" type="text/javascript" charset="utf-8"></script>
 	<script src="../layui-v2.5.5/layui/layui.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/index.js"></script>
 	<script type="text/javascript">
 		var serverUrl = 'http://47.113.113.156:8080/'
 		

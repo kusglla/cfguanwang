@@ -2,23 +2,19 @@
 <html lang="zh">
 <head>
 	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
 	<link rel="stylesheet" type="text/css" href="./layui-v2.5.5/layui/css/layui.css" media="all"/>
 	<link rel="stylesheet" href="css/index.css">
 	<title>新房网_佛山房产_佛山楼盘_佛山新房_佛山房价_佛山买房【采房网】</title>
-	<style type="text/css">
-	</style>
 </head>
 <body>
 	<!-- 轮播 -->
-	<div class="layui-carousel" id="test1">
+<div class="layui-carousel" id="test1">
 	  <div carousel-item>
 	    <div class="carousel-imgs"></div>
 		<div class="carousel-imgs1"></div>
 	  </div>
 	 <!-- 导航栏		 -->	
-	 <!-- <iframe  MARGINWIDTH=0 MARGINHEIGHT=0 HSPACE=0 VSPACE=0 FRAMEBORDER=0 SCROLLING=no src="./pages/header.html" height="100px" width="100%" style="position:absolute; top:-2px;color:#000;"></iframe> -->
-	 
 	<div class="topNav">
 	 	<div class="topNav-left">
 	 		<img src="img/logo.png" class="topNav-img">	
@@ -36,7 +32,7 @@
 	 			<div class="login-box"></div>
 	 	</div>	
 	 </div>
-	</div>
+</div>
 	
 	<!-- 热卖新房 -->
 	<div class="index-newHouse">
@@ -181,6 +177,7 @@
 
 <script src="./lib/jquery3.41.js" type="text/javascript" charset="utf-8"></script>
 <script src="./layui-v2.5.5/layui/layui.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/index.js"></script>
 <script>
 	//域名
 	var serverUrl = 'http://47.113.113.156:8080/'
@@ -479,12 +476,18 @@
 						coverImg = item.cfEffectImgs[0].effectImg
 					}
 					console.log(coverImg)
-					let divItem =`<div style="width: 265px;height: 270px;" onclick="detail(${item.cfNewHouse.id})">
-									<img src="${coverImg}" style="width: 265px;height: 205px; border-radius: 7px;" >
-									<div style="font-size:16px;padding: 3px 0px;font-weight:550">${item.cfNewHouse.estateName}</div>
-									<div style="display: flex;justify-content: space-between;">
-										<div style="font: 15px;color: #A8A8A8;">${item.cfNewHouse.estateDistrict}</div>
-										<div style="font: 20px;color: red;">${item.cfNewHouse.totalPrice}元起</div>
+					let divItem =`<div class="YXhourse-li" onclick="detail(${item.cfNewHouse.id})">
+					                <div class="YXhourse-left">
+									    <img src="${coverImg}" class="YXhourse-img">
+									    <div class="YXhourse-name">${item.cfNewHouse.estateName}</div>
+										
+									    <div class="YXhourse-line" >
+									    	<div class="YXhourse-div1">${item.cfNewHouse.estateDistrict}/3室2厅</div>
+									    </div>
+									</div>
+									<div class="YXhourse-right">
+									  <div class="YXhourse-div1">${item.cfNewHouse.totalPrice}/元</div>
+
 									</div>
 								</div>`
 					$('#YXhourse').append(divItem)

@@ -2,126 +2,62 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>新房网_佛山房产_佛山楼盘_佛山新房_佛山房价_佛山买房【采房网】</title>
 		<link rel="stylesheet" type="text/css" href="../layui-v2.5.5/layui/css/layui.css" media="all"/>
-		<style type="text/css">
-			html,body{
-				padding: 0px;
-				margin: 0px;
-			}
-			a,li{
-				text-decoration: none;
-				list-style: none;
-			}
-			
-			#hourmain{
-				display: flex;
-				width: 1178px;
-				box-sizing: border-box;
-				margin: auto;
-				margin-top: 20px;
-			}
-			
-			#hourmain a:hover{
-				color: white;
-			}
-			
-			.infor-right p{
-				padding: 8px 0px;
-			}
-			
-			.layui-carousel{
-				height: 372px!important;
-			}
-			
-			.agent-box>div{
-				margin-top: 30px;
-				margin-left: 30px;
-			}
-			
-			.layui-tab-content{
-				/* height: calc(100% - 40px)!important; */
-			}
-			
-			.layui-tab-content{
-				padding: 0px;
-			}
-			
-			.price-number{
-				font-size: 3.2em;
-				color: #fe615a;
-				font-weight: 700;
-			}
-			
-			.price-unit{
-				font-size: 16px;
-				color: #fe615a;
-			}
-			
-			
-			.sell-status{
-			    height: 21px;
-			    width: 40px;
-			    background: rgb(6,116,68);
-			    display: inline-block;
-			    text-align: center;
-			    border-radius: 5px;
-			    color: white;
-				/* vertical-align: bottom; */
-			}
-			
-			.infor-right>p>span:nth-child(1){
-				color: #aeaeae;
-				display: inline-block;
-				font-size: 18px;
-			}
-			
-			
-			ul>li{
-				padding: 3px 0px;
-			}
-			
-			ul>li>span{
-				display: inline-block;
-				width: 105px;
-				color: #999;
-				font-size: 14px;
-			}
-			
-			.layWrap{
-				 width: 1178px;
-				 box-sizing: border-box;
-				 margin: auto;
-				 font-size: 15px;
-				 margin-top: 50px;
-				 line-height: 30px;
-				 padding: 30px;
-				 box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
-			}
-			.phone-box p{
-				padding: 0px;
-			}
-		</style>
+
+	    <link rel="stylesheet" href="../css/detail.css">
 	</head>
 	<body>
+		<!--导航栏--->
+		<div class="detail-nav">
+			<div class="topNav">
+			 		    <div class="topNav-left">
+			 				<img src="../img/logo.png" class="topNav-img">	
+			 			</div>		
+			 			<div class="topNav-right">
+							<!-- 搜索栏 -->
+							<div class="detail-search">
+								<!-- <label for=""><img src="../img/logo.jpg"</label> -->
+								<form action="" class="layui-form">
+									<div class="layui-input-block">
+									    <input type="text" name="title" required  lay-verify="required" placeholder="输入楼盘名称" autocomplete="off" class="layui-input">
+									    <button type="button" class="layui-btn layui-btn-danger" >搜新房</button>
+									</div>
+								</form>
+							</div>
+			 				<div class="topNav-line" >
+			 					<!-- <a href="javascript:void(0);">别墅</a>|
+			 					<a href="javascript:void(0);">住宅</a>|
+			 					<a href="javascript:void(0);">公寓</a>|
+			 					<a href="javascript:void(0);">商铺</a>|
+			 					<a href="javascript:void(0);">写字楼</a>| -->
+								<a href="javascript:void(0);">新房</a>|
+			 					<a href="javascript:void(0);" id="xcx">小程序</a>|
+			 					<a href="javascript:void(0);" id="APP">APP</a>
+			 					<div id="xcxImgs">
+			 						<img src="../img/ewm.jpg" >
+			 					</div>
+			 				</div>
+			 					<img src="../img/login-icon.png" class="login-icon">
+			 					<div class="login-box"></div>
+			 			</div>	
+			 </div>
+		</div>
+		
 		<!-- 顶部导航栏 -->
-		<div style="width: 1178px; box-sizing: border-box; height: 40px; margin: auto; display: flex; justify-content: space-between; align-items: center;">
-			<div>
-				<a href="../index.html">首页</a> >
-				<a href="more.html">新房</a> >
-				<strong>房屋详情</strong>
+		<div class="detail-top">
+			<div class="detail-left">
+				<span>您的位置 : </span>
+				<a href="../index.html">首页 > </a> 
+				<a href="more.html">新房 > </a> 
+				<a class="detail-icon">房屋详情</a>
 			</div>
-			<div>服务热线400-009-9900</div>
+			<!-- <div>服务热线400-009-9900</div> -->
 		</div>
 		<!-- 顶部导航栏end -->
 		
 		
-		<!-- 搜索栏 -->
-		<div style="width: 1178px; box-sizing: border-box; margin: auto; display: flex; padding-top: 15px;">
-			<img src="../img/logo.jpg" style="width: 53px;height: 50px;">
-			<input type="text" name="title" required lay-verify="required" placeholder="输入楼盘名称" style="padding: 25px" autocomplete="off" class="layui-input">    
-			<button type="button" class="layui-btn layui-btn-warm" style="height: 50px;">搜新房</button>
-		</div>
 		<!-- 搜索栏end -->
 		
 		
@@ -242,6 +178,7 @@
 		<!-- 页脚 -->
 		<iframe  MARGINWIDTH=0 MARGINHEIGHT=0 HSPACE=0 VSPACE=0 FRAMEBORDER=0 SCROLLING=no src="footer.html" height="250px" width="100%"></iframe>
 		<!-- 页脚end -->
+	
 	</body>
 </html>
 
@@ -249,6 +186,7 @@
 <script src="../lib/jquery3.41.js" type="text/javascript" charset="utf-8"></script>
 <script src="../lib/jquery.params.js.js"></script>
 <script src="../layui-v2.5.5/layui/layui.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/index.js"></script>
 <script>
 	var serverUrl = 'http://47.113.113.156:8080/'
 
