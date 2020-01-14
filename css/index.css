@@ -1,5 +1,5 @@
 html,body{
-			width: 100%;
+		
 		}
 		
 		/* 顶部导航栏 */
@@ -294,3 +294,8 @@ footer a:hover{
 	padding-top: 20px;
 	font-size:15px;
 }
+/* .iframe{
+	margin:1178px auto;
+	height:auto;
+	border:1px solid red;
+} */

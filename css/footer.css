@@ -5,10 +5,9 @@
 	text-decoration: none;
 	list-style: none;
 }
+
 .add-footer{
 	height: 200px;
-	width:120%;
-	background-color: #ddd;
 	position: fixed;
 	bottom: 0;
 }
@@ -17,7 +16,6 @@
 }
 .footer_help{
 	text-align:left;
-	margin-left:5%;
 }
 
 .add-footer{
@@ -28,7 +26,11 @@
   padding:20px 0;
   margin: 40px auto 40px auto;
   margin-bottom: 15px;
-  border:#fff 2px  solid ;
+  width:100%;
+  }
+  .footer-top,.footer-content,.footer_help{
+	width:1178px;
+	margin: auto; 
   }
 .footer-top,.content_1>ul{
 	display:flex;
@@ -37,7 +39,6 @@
 }
 .footer-top>.tabItems,.content_1>ul{
 	line-height:30px;
-	margin-left: 5%;
 }
 .content_1>ul{
 	line-height:60px;
