@@ -89,16 +89,19 @@ html,body{
 #test1{
 	min-width: 1184px;
 }
-#test1  .carousel-imgs,#test1  .carousel-imgs1{
-	background-size: cover;
+#test1  .carousel-imgs,#test1 .carousel-imgs1{
 	width: 100%;
 }
 #test1  .carousel-imgs{
-	background: url(../img/index-content.jpg) no-repeat;
+	background: url(../img/bannar1.jpg) no-repeat;
+	background-size: cover;
 }
+
 #test1  .carousel-imgs1{
-	background: url(../img/index-content.jpg) no-repeat;
+	background: url(../img/bannar2.jpg) no-repeat;
+	background-size: cover;
 }
+
 .topNav{
 	width:95%;
 	margin:0 2.5%;
@@ -123,12 +126,12 @@ html,body{
 	height: 100px;
 	width: 100px;
 	background: red;
-	right: 250px;
+	right: 155px;
 	top:65px;
 	display: none;
 }
 .topNav>.topNav-right>.topNav-line{
-	padding:0 50px;
+	padding:0 15px;
 }
 .topNav>.topNav-right>.topNav-line>a{
 	padding:0 10px;

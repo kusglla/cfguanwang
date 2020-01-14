@@ -40,7 +40,7 @@
 			}
 			
 			.layui-tab-content{
-				height: calc(100% - 40px)!important;
+				/* height: calc(100% - 40px)!important; */
 			}
 			
 			.layui-tab-content{
@@ -128,12 +128,6 @@
 		<!-- 房屋图片详情 -->
 		<div id="hourmain">
 			<div class="layui-tab layui-tab-card"  style="height: 320px;width: 50%;">
-			  <ul class="layui-tab-title">
-			    <li class="layui-this">效果图</li>
-			    <li>实景图</li>
-			    <li>样板图</li>
-			    <li>区位图</li>
-			  </ul>
 			  <div class="layui-tab-content">
 			    <div class="layui-tab-item layui-show">
 					<!-- 效果图轮播 -->
@@ -168,44 +162,17 @@
 					<!-- 区位图轮播 -->
 				</div>
 			  </div>
+			  <ul class="layui-tab-title">
+			    <li class="layui-this">效果图</li>
+			    <li>实景图</li>
+			    <li>样板图</li>
+			    <li>区位图</li>
+			  </ul>
 			</div>
-			<div class="infor-right" style="margin-left:25px;flex: 1;">
-			 			<div style="display:flex">
-			 				<span style="height:50px;font-size:3.2em;height: 50px;font-weight: 600;color: rgb(105,105,105);">保利南湾花园 <!-- ${data.cfNewHouse.estateName} --></span>
-							<div style="display: flex;align-items: flex-end; margin-left: 10px;">
-								<a href="javascript:void(0);" class="sell-status"> 在售<!-- ${data.cfNewHouse.salesStatus} --></a>
-							</div>
-			  			</div>
-						
-			  			<p style="height: 60px;margin-top: 15px;">
-							<span>价格:</span>
-							<span class="price-number">1800</span> <span class="price-unit">元/平方</span>
-						</p>
-						
-						<div style="height: 55px; padding: 10px; justify-content: space-between; background: rgb(240,255,255);display: flex;">
-							<div style="text-align: center;">
-								<p style="color: rgb(122,162,192);font-size: 16px;padding: 0;">一站式购房平台</p>
-								<p style="color: #999;">更多房源 精确匹配 丨 免费专车 好房一边看完</p>
-							</div>
-							<div>
-								<a style="background: rgb(75,183,243);padding: 6px 20px;border-radius: 5px;color: white;">免费专车看房</a>
-							</div>
-						</div>
-						
-						<p><span>户型:</span> <span style="font-size: 18px;">89m²(三居)、103m²(三居)、108m²(四居)</span></p>
-						<p><span>描述:</span> <span style="font-size: 18px;">毛坯</span></p>
-			  			<p><span>地址:</span> <span style="font-size: 18px;">佛山市三水区撒干撒</span></p>
-						
-						<div style="height: 70px; padding: 10px; justify-content: space-between; background: rgb(240,255,255);display: flex;">
-							<div style="margin: auto; width: 50px;">
-								<img src="../img/phone-icon.png" >
-							</div>
-							<div class="phone-box"> 
-								<p style="text-align: right;color: #999;">电话加密保护,放心向TA咨询</p>
-								<p style="font-size: 3.2em;font-weight: 700;color: rgb(244,5,10);">0757-63838600</p>
-							</div>
-							<div style="width: 100px;"></div>
-						</div>
+			<div class="infor-right" style="margin-left:25px;flex: 1;" id="infoRight">
+				
+				
+				
 			</div>
 		</div>
 		<!-- 房屋图片详情end -->
@@ -213,24 +180,7 @@
 		<!-- 户型介绍 -->
 		<div class="layWrap">
 			<p>户型介绍</p>
-			<div style="display: flex;">
-				<div style="width: 205px;height: 340px;border: 1px solid #e4e6f0;">
-					<img src="../img/logo.png"  style="height: 50%;width: 100%;">
-					<div style="padding-left: 3px;line-height: 25px; padding: 16px 8px;">
-						<p style="font-size: 14px; font-weight: 700">3室2厅2卫</p>
-						<p style="color: #9399a5;font-size: 14px;">建面 89²</p>
-						<p style="margin-bottom: 5px;font-size: 16px;color: #fa5741;">约196万/套</p>
-					</div>
-				</div>
-				
-				<div style="width: 205px;height: 340px;border: 1px solid #e4e6f0; margin-left: 20px;">
-					<img src="../img/logo.jpg"  style="height: 50%;width: 100%;">
-					<div style="padding-left: 3px;line-height: 25px; padding: 16px 8px;">
-						<p style="font-size: 14px; font-weight: 700">3室2厅2卫</p>
-						<p style="color: #9399a5;font-size: 14px;">建面 89²</p>
-						<p style="margin-bottom: 5px;font-size: 16px;color: #fa5741;">约196万/套</p>
-					</div>
-				</div>
+			<div style="display: flex;" id="hx-introduce">
 				
 			</div>
 		</div>
@@ -397,20 +347,67 @@
 				  });
 				});
 				
-				
-							// <p><span>销售状态:</span></p>
 				/*-------------------------------楼盘介绍渲染--------------------------------*/
-				// let	smipleInfoDiv=`<div class="infor-right" style="margin-left:25px">
-				// 			<div style="display:flex">
-				// 				<h1 style="height:50px">名字 ${data.cfNewHouse.estateName}</h1>
-				// 				<a href="javascript:void(0);" class="sell-status"> 在售 ${data.cfNewHouse.salesStatus} </a>
-				// 			</div>
-				// 			<p><span>参考价格:</span> <span class="price-number"> ${data.cfNewHouse.unitPrice}</span> <span class="price-unit">元/m²</span></p>
-				// 			<p><span>楼盘地址:</span> <span>${data.cfNewHouse.estateAddress}</span></p>
-				// 			<p><span>户型:</span> 	  <span>3居两厅</span></p>
-				// 			<div style="font-size: 20px;margin-top: 10px; font-weight: 650;">营销中心 ${data.cfNewHouse.saleHousePhone}</div>
-				// 		</div>`
-				// $("#hourmain").append(smipleInfoDiv)
+							
+				let  infoRight = `<div>
+									<div style="display:flex">
+										<span style="height:50px;font-size:3.2em;height: 50px;font-weight: 600;color: rgb(105,105,105);">${data.cfNewHouse.estateName}</span>
+										<div style="display: flex;align-items: flex-end; margin-left: 10px;">
+											<a href="javascript:void(0);" class="sell-status"> ${data.cfNewHouse.salesStatus} </a>
+										</div>
+									</div>
+									
+									<p style="height: 60px;margin-top: 15px;">
+										<span>价格:</span>
+										<span class="price-number"> ${data.cfNewHouse.unitPrice} </span> <span class="price-unit">元/平方</span>
+									</p>
+									
+									<div style="height: 55px; padding: 10px; justify-content: space-between; background: rgb(240,255,255);display: flex;">
+										<div style="text-align: center;">
+											<p style="color: rgb(122,162,192);font-size: 16px;padding: 0;">一站式购房平台</p>
+											<p style="color: #999;">更多房源 精确匹配 丨 免费专车 好房一边看完</p>
+										</div>
+										<div>
+											<a style="background: rgb(75,183,243);padding: 6px 20px;border-radius: 5px;color: white;">免费专车看房</a>
+										</div>
+									</div>
+									
+									<p><span>户型:</span> <span style="font-size: 18px;">89m²(三居)、103m²(三居)、108m²(四居)</span></p>
+									<p><span>描述:</span> <span style="font-size: 18px;">${data.cfNewHouse.decorationDescribe}</span></p>
+									<p><span>地址:</span> <span style="font-size: 18px;">${data.cfNewHouse.salesAddress}</span></p>
+									
+									<div style="height: 70px; padding: 10px; justify-content: space-between; background: rgb(240,255,255);display: flex;">
+										<div style="margin: auto; width: 50px;">
+											<img src="../img/phone-icon.png" >
+										</div>
+										<div class="phone-box"> 
+											<p style="text-align: right;color: #999;">电话加密保护,放心向TA咨询</p>
+											<p style="font-size: 3.2em;font-weight: 700;color: rgb(244,5,10);">${data.cfNewHouse.saleHousePhone}</p>
+										</div>
+										<div style="width: 100px;"></div>
+									</div>
+								</div>`
+				$('#infoRight').append(infoRight)
+				
+				
+				// 户型介绍渲染
+				for(let item of data.cfHouseTypesResp){
+					let  hxIntroduceDiv =	`<div style="width: 205px;height: 340px;border: 1px solid #e4e6f0; margin-left: 25px;">
+											<img src="${item.cfHouseTypeImgs[0].houseTypeImg}"  style="height: 50%;width: 100%;">
+											<div style="padding-left: 3px;line-height: 25px; padding: 16px 8px;">
+												<p style="font-size: 14px; font-weight: 700">${item.room}室 ${item.hall}厅 ${item.toilet}卫</p>
+												<p style="color: #9399a5;font-size: 14px;">建面 ${item.area}²</p>
+												<p style="margin-bottom: 5px;font-size: 16px;color: #fa5741;">约196万/套</p>
+											</div>
+										</div>`
+					$('#hx-introduce').append(hxIntroduceDiv)		
+					console.log(item)
+				}
+				
+				
+				
+				
+				
 				
 				
 				
@@ -453,13 +450,6 @@
 				  // var x= document.querySelector('#xiangqingBox').innerHTML
 				 // x= x.replace("${data.cfNewHouse.floorSpace}",data.cfNewHouse.floorSpace)
 				 // document.querySelector('.sdf').innerHTML=x
-				 
-				 
-				  // data.cfNewHouse.forEach(v=>{
-					 //  console.log(v)
-				  // })
-				 // document.querySelector('.sdf').innerHTML=y
-				  
 				  
 			}
 		})
