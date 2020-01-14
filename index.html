@@ -478,12 +478,17 @@
 						coverImg = item.cfEffectImgs[0].effectImg
 					}
 					console.log(coverImg)
-					let divItem =`<div style="width: 265px;height: 270px;" onclick="detail(${item.cfNewHouse.id})">
-									<img src="${coverImg}" style="width: 265px;height: 205px; border-radius: 7px;" >
-									<div>${item.cfNewHouse.estateName}</div>
-									<div style="display: flex;justify-content: space-between;">
-										<div style="font: 15px;color: #A8A8A8;">${item.cfNewHouse.estateDistrict}/3室2厅</div>
-										<div style="font: 20px;color: #00FF00;">${item.cfNewHouse.totalPrice}元起</div>
+					let divItem =`<div class="YXhourse-li" onclick="detail(${item.cfNewHouse.id})">
+					                <div class="YXhourse-left">
+									    <img src="${coverImg}" class="YXhourse-img">
+									    <div class="YXhourse-name">${item.cfNewHouse.estateName}</div>
+										
+									    <div class="YXhourse-line" >
+									    	<div class="YXhourse-div1">${item.cfNewHouse.estateDistrict}/3室2厅</div>
+									    </div>
+									</div>
+									<div class="YXhourse-right">
+									  <div class="YXhourse-div1">${item.cfNewHouse.totalPrice}/元</div>
 									</div>
 								</div>`
 					$('#YXhourse').append(divItem)

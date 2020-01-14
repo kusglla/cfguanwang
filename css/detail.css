@@ -22,7 +22,27 @@ html,body{
 			    color: white;
 			    display: flex;
 			    font-size: 16px;
+				height:80px;
+				line-height:80px;
+			}
+			.layui-form{
 				line-height:100px;
+				margin-top:20px;
+			}
+			.layui-form>.layui-input-block{
+				display:flex;
+				justify-content: space-between;
+			}
+			.layui-form>.layui-input-block>.layui-btn{
+				margin-left:5px!important;
+			}
+			.layui-form>.layui-input-block>.layui-input{
+				width:300px !important;
+				border-radius: 5px;
+				font-size:14px;
+			}
+			.detail-nav>.topNav>.topNav-right{
+				display:flex;
 			}
 			.topNav>.topNav-right>.topNav-line {
 			    padding: 0 50px;
@@ -42,7 +62,7 @@ html,body{
 			.topNav>.topNav-right > .login-icon {
 			    height: 30px;
 			    width: 30px;
-			    margin-top: 35px;
+			    margin-top: 25px;
 			    padding: 0 10px;
 			}
 			.topNav a {
@@ -50,24 +70,58 @@ html,body{
 			    color: white;
 			}
 			
+			/*****弹出框样式****/
+			.login-line {
+			    margin-top: 20px;
+			}
+			.layui-form-item {
+			    margin-bottom: 15px;
+			    clear: both;
+			    *zoom: 1;
+			}
+			.layui-form-label {
+			    float: left;
+			    display: block;
+			    padding: 9px 15px;
+			    width: 80px;
+			    font-weight: 400;
+			    line-height: 20px;
+			    text-align: right;
+			}
+			.layui-input {
+			    width: 75%!important;
+			}
+			#loginBtnText, #registerBtnText {
+			    margin: 20px 0!important;
+			}
+			#xcxImgs {
+			    position: absolute;
+			    height: 100px;
+			    width: 100px;
+			    background: red;
+			    right: 155px;
+			    top: 65px;
+			    display: none;
+			}
+			/****路径和搜索页面******/
 			
 			.detail-top{
 				width: 1178px; 
 				margin: auto; 
-				border:1px solid red;
 				box-sizing: border-box;
-				line-height: 80px; 
+				line-height: 35px; 
 				display: flex; 
 				justify-content: space-between; 
 				align-items: center;
 			}
 			
 			.topNav>.topNav-left>.topNav-img {
-			    height: 100px;
+			    height: 80px;
 			    width: 100px;
 			}
 			.detail-top>.detail-left>a{
 				font-size:15px;
+				color:#777;
 			}
 			.detail-top>.detail-left>.detail-icon{
 				font-weight: bold;
@@ -84,7 +138,6 @@ html,body{
 				width: 1178px;
 				box-sizing: border-box;
 				margin: auto;
-				margin-top: 20px;
 			}
 			
 			#hourmain a:hover{
