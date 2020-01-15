@@ -19,6 +19,23 @@ li,a{
 			background-color:#303035;
 			border-bottom:1px solid #ccc;
 		}
+.header-content>.topNav{
+	width:1178px;
+	margin:auto;
+	height:100px;
+}	
+.header-content>.topNav>.topNav-left{
+	float:left;
+}
+.header-content>.topNav>.topNav-right{
+	float:right;
+}
+.header-content>.topNav>.topNav-right>a{
+	font-size:16px;
+	color:#fff;
+
+}
+		
 		.header-content>.topNav>.topNav-left>a>img{
 			height:100px;
 			width:100px;

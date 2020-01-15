@@ -13,7 +13,7 @@
 		<div class="detail-nav">
 			<div class="topNav">
 			 		    <div class="topNav-left">
-			 				<a href="../index.html" target="_blank">
+			 				<a href="../index.html" >
 			 				    <img src="../img/logo.png" class="topNav-img">
 			 				</a>
 			 			</div>		
@@ -229,10 +229,10 @@
 					  	 	</div>
 					  	 </div>
 					  <div class="footer-hr"/>	</div>
-					  <p class="footer_help">Copyright©2019
-					    <a href="#"> 2018-2020 佛山采房信息科技有限公司版权所有</a>
-						<a class="footer-miit" href="http://www.beian.miit.gov.cn" target="_blank">粤ICP备19025915号</a>
-					  </p>
+					<p class="footer_help" style="color:#fff;"> <a >Copyright© 2018-2020 佛山采房信息科技有限公司版权所有</a>
+					    <a href="http://fsamr.foshan.gov.cn/" target="_blank"> <img src="../img/footer-logo.png" alt=""></a>
+						<a class="footer-miit" href="http://www.beian.miit.gov.cn" target="_blank" style="padding:0 !important;">粤ICP备19025915号 </a>
+					</p>
 			</footer>
 		<!-- 页脚end -->
          
@@ -354,7 +354,9 @@
 											<p style="color: #999;font-size: 15px;">更多房源 精确匹配 丨 免费专车 好房一边看完</p>
 										</div>
 										<div style="margin-top:15px;">
-											<a style="background: rgb(75,183,243);padding: 6px 20px;border-radius: 5px;color: white;">免费专车看房</a>
+										    <button onclick="freeSeeCar" style="border:0;">
+											   <a style="background: rgb(75,183,243);padding: 6px 20px;border-radius: 5px;color: white;cursor: pointer;" >免费专车看房</a>
+											</button>
 										</div>
 									</div>
 									
@@ -461,4 +463,36 @@
 			console.log('2')
 		}
 	})
+	//免费看车
+	function freeSeeCar(){
+		alert("点击成功");
+		layui.use('layer', function(){
+		  var layer = layui.layer;
+		  layer.open({
+			title:"用户登录",  
+		    type: 1, 
+		    content: `
+				<form class="layui-form" action="#" style="height: 360px; width: 360px;"> 
+					<div class="layui-form-item login-line">
+						<label class="layui-form-label">手机号</label>
+						<div class="layui-input-block">
+							<input type="text" name="phone" maxlength="11" lay-verify="required|phone maxlength="11" id="longinPhone" placeholder="请输入您的手机号" autocomplete="off" class="layui-input">
+						</div>
+					</div>
+				    <div class="layui-form-item login-line">
+						<label class="layui-form-label">短信验证码</label>
+						  <div class="layui-input-block">
+							<input type="text" name="code" maxlength="6" placeholder="请输入短信验证码" autocomplete="off" class="layui-input">
+							<button type="button" id="loginBtnText" class="layui-btn layui-btn-primary" onclick="getLoginCode()">获取验证码</button>
+						</div>
+				    </div>
+					<div class="layui-input-block">
+					    <button class="layui-btn layui-btn-warm" lay-submit lay-filter="loginFrom">立即登录</button>
+					</div>
+					<a style="display: flex;justify-content: flex-end; margin-right:50px" href="http://925029931.com" target="_blank">经纪人登录</a>
+				</form>
+			`
+		  });
+		});              
+	}
 </script>
