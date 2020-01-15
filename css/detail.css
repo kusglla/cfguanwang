@@ -89,13 +89,13 @@
 			    margin: 20px 0!important;
 			}
 			#xcxImgs{
-			       position: absolute;
-			       height: 100px;
-			       width: 100px;
-			       background: red;
-			       right: 575px;
-			       top: 65px;
-			       display: none;
+			 position: absolute;
+			 height: 100px;
+			 width: 100px;
+			 background: red;
+			 right: 575px;
+			 top: 65px;
+			 display: none;
 			}
 			.topNav>.topNav-right>.topNav-line>#xcxImgs>img {
 			    height: 100%;
@@ -239,7 +239,7 @@
 		margin-top: 10px;
 	}
 	.layui-tab-title {
-	    overflow: show!important;
+	    overflow: inherit!important;
 	}
 	.layui-tab-title li{
 		padding: 0px 20px;
