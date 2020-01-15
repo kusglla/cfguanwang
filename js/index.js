@@ -302,14 +302,18 @@
 									// <div style="display: flex;justify-content: space-between;">
 									// </div>
 					console.log(coverImg)
-					let divItem =`<div style="width: 265px;height: 270px;" onclick="detail(${item.cfNewHouse.id})">
-									<img src="${coverImg}" style="width: 265px;height: 205px; border-radius: 7px;" >
-									<div style="font-size: 12px;line-height:12px;color: #A8A8A8;margin-top:5px">${item.cfNewHouse.estateDistrict}</div>
-									
-									<div style="margin-top:5px;display:flex;justify-content: space-between; ">
-										<div style="width:163px;overflow:hidden;font-weight:600;text-overflow: ellipsis;white-space: nowrap;">${item.cfNewHouse.estateName}</div>
-										<div style="font-size: 15px;color: #00FF00;">${item.cfNewHouse.unitPrice}元/m²起</div>
-									<div>
+					let divItem =`<div class="YXhourse-li" onclick="detail(${item.cfNewHouse.id})">
+					                <div class="YXhourse-left">
+									    <img src="${coverImg}" class="YXhourse-img">
+									    <div class="YXhourse-name">${item.cfNewHouse.estateName}</div>
+										
+									    <div class="YXhourse-line" >
+									    	<div class="YXhourse-div1">${item.cfNewHouse.estateDistrict}/3室2厅</div>
+									    </div>
+									</div>
+									<div class="YXhourse-right">
+									  <div class="YXhourse-div1">${item.cfNewHouse.totalPrice}/元</div>
+									</div>
 								</div>`
 					$('#YXhourse').append(divItem)
 				}

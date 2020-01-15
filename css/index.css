@@ -287,7 +287,7 @@
 .YXhourse-li>.YXhourse-left>.YXhourse-img{
 	width: 250px;
 	height: 205px;
-	margin:15px 10px 10px 10px;
+	margin: 10px;
 	border-radius: 7px;
 }
 .YXhourse-li>.YXhourse-left>.YXhourse-name{
@@ -320,7 +320,6 @@
 	font-size:20px;
 	color:#fe5e0f;
 }
-
 /* .iframe{
 	margin:1178px auto;
 	height:auto;
