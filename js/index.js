@@ -206,10 +206,12 @@
 				success:function(res){
 					if(res.code==200){
 						$('.login-box').children().empty()
-						$('.login-box').append(`<span onclick="myMsg()">${phone}</span> / <span onclick="Logout()">退出</span>`)
+						$('.login-box').append(`<span onclick="myMsg()">${res.data}</span> / <span onclick="Logout()">退出</span>`)
 						localStorage.setItem("phone", phone);
 						console.log(msmCode)
 						layer.closeAll();
+					}else{
+						alert(res.msg)
 					}
 				}
 			})
@@ -240,9 +242,11 @@
 				success:function(res){
 					if(res.code==200){
 						$('.login-box').children().empty()
-						$('.login-box').append(`<span onclick="myMsg()">${phone}</span> / <span onclick="Logout()">退出</span>`)
+						$('.login-box').append(`<span onclick="myMsg()">${res.data}</span> / <span onclick="Logout()">退出</span>`)
 						localStorage.setItem("phone", phone);
 						layer.closeAll();
+					}else{
+						alert(res.msg)
 					}
 				}
 			})
@@ -263,10 +267,10 @@
 		var	phoneStorage = localStorage.getItem('phone')
 		if(phoneStorage!=null){
 			$('.login-box').children().empty()
-			$('.login-box').append(`<div><span onclick="myMsg()">${phoneStorage}</span> / <span onclick="Logout()">退出</span></div>`)
+			$('.login-box').append(`<div><a href="javaScript:void(0)" onclick="myMsg()">${phoneStorage}</a> / <a href="javaScript:void(0)" onclick="Logout()">退出</a></div>`)
 		}else{
 			$('.login-box').children().empty()
-			$('.login-box').append(`<div><a href="javascript:void(0)" onclick="login()">登录</a> / <a href="javascript:void(0)" onclick="register()">注册</a></div>`)
+			$('.login-box').append(`<div><a href="javaScript:void(0)" onclick="login()">登录</a> / <a href="javaScript:void(0)" onclick="register()">注册</a></div>`)
 		}
 		console.log(phoneStorage)
 	}
@@ -295,14 +299,17 @@
 					if(item.cfEffectImgs[0].effectImg!=undefined){
 						coverImg = item.cfEffectImgs[0].effectImg
 					}
+									// <div style="display: flex;justify-content: space-between;">
+									// </div>
 					console.log(coverImg)
 					let divItem =`<div style="width: 265px;height: 270px;" onclick="detail(${item.cfNewHouse.id})">
 									<img src="${coverImg}" style="width: 265px;height: 205px; border-radius: 7px;" >
-									<div>${item.cfNewHouse.estateName}</div>
-									<div style="display: flex;justify-content: space-between;">
-										<div style="font: 15px;color: #A8A8A8;">${item.cfNewHouse.estateDistrict}/3室2厅</div>
-										<div style="font: 20px;color: #00FF00;">${item.cfNewHouse.totalPrice}元起</div>
-									</div>
+									<div style="font-size: 12px;line-height:12px;color: #A8A8A8;margin-top:5px">${item.cfNewHouse.estateDistrict}</div>
+									
+									<div style="margin-top:5px;display:flex;justify-content: space-between; ">
+										<div style="width:163px;overflow:hidden;font-weight:600;text-overflow: ellipsis;white-space: nowrap;">${item.cfNewHouse.estateName}</div>
+										<div style="font-size: 15px;color: #00FF00;">${item.cfNewHouse.unitPrice}元/m²起</div>
+									<div>
 								</div>`
 					$('#YXhourse').append(divItem)
 				}
@@ -314,6 +321,11 @@
 	// 去详情页
 	function detail(e){
 		window.location.href = "./pages/detail.html?id="+e
+	}
+
+	//去所有房源
+	function onMore(){
+		window.location.href = "./pages/more.html"
 	}
 
 	// 打开咨询弹框
