@@ -119,7 +119,7 @@ html,body{
 				align-items: center;
 			}
 			
-			.topNav>.topNav-left>.topNav-img {
+			.topNav>.topNav-left>a>.topNav-img {
 			    height: 80px;
 			    width: 100px;
 			}
