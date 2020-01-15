@@ -143,6 +143,10 @@ footer a:hover{
     line-height: 40px;
     padding-bottom:20px;
   }
+   .add-footer>.footer_help{
+	   font-size:15px;
+	   color:#bbb;
+   }
   .add-footer>.footer_help>a{
   	color:#fff;
   }

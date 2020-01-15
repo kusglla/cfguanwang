@@ -26,7 +26,9 @@
 				justify-content: space-between;
 			}
 			.layui-form>.layui-input-block>.layui-btn{
-				margin-left:5px!important;
+				margin-left:-5px!important;
+				border-top-right-radius: 5px;
+				border-bottom-right-radius: 5px;
 			}
 			.layui-form>.layui-input-block>.layui-input{
 				width:300px !important;
@@ -117,10 +119,6 @@
 			}
 			.detail-top>.detail-left>a{
 				font-size:15px;
-				color:#777;
-			}
-			.detail-top>.detail-left>.detail-icon{
-				font-weight: bold;
 			}
 			.detail-top>.detail-search{
 				width: 500px;
@@ -134,6 +132,7 @@
 				width: 1178px;
 				box-sizing: border-box;
 				margin: auto;
+				height:500px;
 			}
 			
 			#hourmain a:hover{
@@ -212,3 +211,64 @@
 			.phone-box p{
 				padding: 0px;
 			}
+	.hxDiv-item{
+		width: 205px;
+	}
+	
+	.layWrap>p{
+		font-weight: 600;
+	}
+	
+	.layWrap>p>span{
+		font-weight: 600;
+		color: rgb(242,77,60);
+	}
+	
+	#infoRight p>span{
+		font-size: 18px;
+	}
+	
+	.layui-tab-card>.layui-tab-title .layui-this{
+		/* background: red; */
+		
+	}
+	
+	.layui-tab-card>.layui-tab-title{
+		background: none;
+		height: 0px;
+		margin-top: 10px;
+	}
+	.layui-tab-title {
+	    overflow: show!important;
+	}
+	.layui-tab-title li{
+		padding: 0px 20px;
+		width:100px;
+		
+	}
+	
+	.layui-tab-title li:not(:first-child){
+		margin-left: 10px;
+	}
+	
+	.layui-tab-title .layui-this:after {
+		height: 0px;
+	}
+	/* 户型介绍 */
+
+	
+.detail-introduce{
+	font-weight: bold;
+	font-szie:16px;
+}	
+#hxText>span{
+	font-size:16px;
+	color: #101d37;
+	line-height: 25px;
+	height: 50px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	padding-top: 15px;
+	font-weight: 600;
+	white-space: nowrap;
+}
