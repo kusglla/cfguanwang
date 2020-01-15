@@ -1,3 +1,7 @@
+		html,body{
+			min-width: 1178px;
+		}
+		
 		/* 顶部导航栏 */
 		.topNav{
 			position: absolute;
@@ -83,7 +87,7 @@
 		}
 /***轮播***/
 #test1{
-	min-width: 1184px;
+	min-width: 1178px;
 }
 #test1  .carousel-imgs,#test1 .carousel-imgs1{
 	width: 100%;
@@ -316,34 +320,7 @@
 	font-size:20px;
 	color:#fe5e0f;
 }
-/* 尾部 */
-.index-footer{
-	height: 200px;
-	min-width: 1194px; 
-	background:#121212;
-}
 
-.index-footer>.footer-center{
-	text-align: center;
-	color: rgb(117,117,117);
-}
-.index-footer>.footer-center>.footer-title{
-	border-bottom: 1px solid #D9D9D9;
-	padding: 20px;
-	color:#fff;
-}
-footer a{
-	color:#999;
-	padding:0 10px;
-	font-size:15px;
-}
-footer a:hover{
-	color: #FFFFFF;
-}
-.index-footer>.footer-center>.footer-foot{
-	padding-top: 20px;
-	font-size:15px;
-}
 /* .iframe{
 	margin:1178px auto;
 	height:auto;

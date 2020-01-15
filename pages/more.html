@@ -3,18 +3,13 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>新房网_佛山房产_佛山楼盘_佛山新房_佛山房价_佛山买房【采房网】</title>
 		<link rel="icon" href="./../img/logo1.png" type="image/x-icon">
 		<link rel="stylesheet" type="text/css" href="../layui-v2.5.5/layui/css/layui.css" media="all"/>
 		<link rel="stylesheet" href="../css/detail.css">
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
 		<style type="text/css">
-			html,body{
-				width: 100%;
-				height: 100%;
-				padding: 0px;
-				margin: 0px;
-			}
+			
 			a{
 				text-decoration: none;
 			}
@@ -29,6 +24,7 @@
 				width: 1178px;
 				margin: auto;
 				padding: 30px;
+				box-sizing: border-box;
 			}
 			
 			.type-filter li{
@@ -59,6 +55,35 @@
 				flex-direction: column;
 				justify-content: space-between;
 			}
+			
+			.index-footer{
+				height: 200px;
+				min-width: 1178px; 
+				background:#121212;
+			}
+			
+			/* 尾部 */
+			.index-footer>.footer-center{
+				text-align: center;
+				color: rgb(117,117,117);
+			}
+			.index-footer>.footer-center>.footer-title{
+				border-bottom: 1px solid #D9D9D9;
+				padding: 20px;
+				color:#fff;
+			}
+			footer a{
+				color:#999;
+				padding:0 10px;
+				font-size:15px;
+			}
+			footer a:hover{
+				color: #FFFFFF;
+			}
+			.index-footer>.footer-center>.footer-foot{
+				padding-top: 20px;
+				font-size:15px;
+			}
 		</style>
 	</head>
 	<body>
@@ -71,9 +96,7 @@
 			 				</a>
 			 			</div>		
 			 			<div class="topNav-right">
-							<!-- 搜索栏 -->
 							<div class="detail-search">
-								<!-- <label for=""><img src="../img/logo.jpg"</label> -->
 								<form action="" class="layui-form">
 									<div class="layui-input-block">
 									    <input type="text" name="title" required  lay-verify="required" placeholder="输入楼盘名称" autocomplete="off" class="layui-input">
@@ -82,11 +105,6 @@
 								</form>
 							</div>
 			 				<div class="topNav-line" >
-			 					<!-- <a href="javascript:void(0);">别墅</a>|
-			 					<a href="javascript:void(0);">住宅</a>|
-			 					<a href="javascript:void(0);">公寓</a>|
-			 					<a href="javascript:void(0);">商铺</a>|
-			 					<a href="javascript:void(0);">写字楼</a>| -->
 								<a href="javascript:void(0);">新房</a>|
 			 					<a href="javascript:void(0);" id="xcx">小程序</a>|
 			 					<a href="javascript:void(0);" id="APP">APP</a>
@@ -103,6 +121,8 @@
 		<!-- 顶部导航栏 -->
 		<div style="width: 1178px; height: 40px; margin: auto; display: flex; justify-content: space-between; align-items: center;">
 			<div><a href="../index.html">首页</a> > <strong>新房</strong></div>
+
+			<div></div>
 		</div>
 		<!-- 顶部导航栏end -->
 		<!-- 搜索end -->
@@ -150,11 +170,32 @@
 		
 		<!-- 分页 -->
 		<div style="text-align: center;">
-			<div id="test1"></div>
+			<div id="test1" style="height: 0px!important;"></div>
 		</div>
+			
 		<!-- 分页 -->
 		<!-- 页脚 -->
-		<iframe  MARGINWIDTH=0 MARGINHEIGHT=0 HSPACE=0 VSPACE=0 FRAMEBORDER=0 SCROLLING=no src="footer.html" height="250px" width="100%" style="position:relative;bottom:0;left:0;min-width:1184px;"></iframe>
+		<!-- <iframe  MARGINWIDTH=0 MARGINHEIGHT=0 HSPACE=0 VSPACE=0 FRAMEBORDER=0 SCROLLING=no src="footer.html" height="250px" width="100%" style="position:relative;bottom:0;left:0;min-width:1184px;"></iframe> -->
+	
+		<footer class="index-footer" >
+			<div class="footer-center">
+				<div class="footer-title">佛山市采房有限公司</div>
+				<div style="padding-top: 20px;">
+					<a href="javaScript:void(0)" target="_blank">关于我们</a> | 
+					<a href="javaScript:void(0)" target="_blank">联系我们</a> |
+					<a href="javaScript:void(0)" target="_blank">用户协议</a> | 
+					<a href="javaScript:void(0)" target="_blank">友情链接</a> |
+					<a href="javaScript:void(0)" target="_blank">广告服务</a> |
+					<a href="javaScript:void(0)" target="_blank">用户须知</a> | 
+					<a href="javaScript:void(0)" target="_blank">异常反馈</a> |
+					<a href="javaScript:void(0)" target="_blank">营业执照</a>
+				</div>
+				<div class="footer-foot">
+					Copyright©2019 粤ICP备19025915号
+				</div>
+			</div>
+		</footer>
+	
 	</body>
 	<script src="../lib/jquery3.41.js" type="text/javascript" charset="utf-8"></script>
 	<script src="../layui-v2.5.5/layui/layui.js" type="text/javascript" charset="utf-8"></script>
@@ -221,8 +262,6 @@
 				console.log(count)
 		  }
 		})
-		
-		
 		layui.use('laypage', function(){
 		  var laypage = layui.laypage;
 			laypage.render({
