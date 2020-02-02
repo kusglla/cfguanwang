@@ -7,6 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="./layui-v2.5.5/layui/css/layui.css" media="all"/>
 	<link rel="stylesheet" href="css/index.css">
 	<link rel="stylesheet" type="text/css" href="css/common.css"/>
+	<!-- <link rel="stylesheet" href="css/detail.css"> -->
 	<title>新房网_佛山房产_佛山楼盘_佛山新房_佛山房价_佛山买房【采房网】</title>
 </head>
 <body>
@@ -19,20 +20,52 @@
 	 <!-- 导航栏		 -->	
 	<div class="topNav">
 	 	<div class="topNav-left">
-	 		<img src="img/logo.png" class="topNav-img">	
-	 	</div>		
-	 	<div class="topNav-right">
+			<ul>
+				<li>
+					<img src="img/logo.png" class="topNav-img">	
+				</li>
+				<li>
+					<form action="">
+						<select name="city" lay-verify="" class="index-select">
+						  <option value="0" selected>佛山</option>
+						  <option value="1">广州</option>
+						  <option value="2" >杭州</option>
+						</select> 
+					</form>
+				</li>
+			</ul>
+		</div>	
+		<div class="topNav-right">
+			<!-- <div class="detail-search">
+				<form action="" class="layui-form">
+					<div class="layui-input-block">
+						<input type="text" name="title" required  lay-verify="required" placeholder="输入楼盘名称" autocomplete="off" class="layui-input">
+						<!-- <button type="button" class="layui-btn layui-btn-danger" >搜新房</button> --> 
+					   <!-- <button type="button" class="layui-btn layui-btn-sm">
+					        <i class="layui-icon  layui-icon-search"></i>
+					      </button>
+					</div>
+				</form> 
+			 </div>	 --> 
 	 		<div class="topNav-line" >
+              <a class="index-search">
+				   <!-- <form action="" method=""> -->
+				   	    <input type="text" placeholder="输入楼盘名称" autocomplete="off">
+				   	    <button type="button" class="layui-icon  layui-icon-search">
+				   	       <!-- <i ></i> -->
+				   	     </button>
+				   <!-- </form> -->
+				</a>
 	 			<a href="./pages/more.html">新房</a>|
-	 			<a href="javascript:void(0);" id="xcx">小程序</a>
-
+	 			<a href="javascript:void(0);" id="xcx">小程序</a>|
+                <a href="javascript:void(0);" id="xcx">下载app</a>
 	 			<div id="xcxImgs">
 	 				<img src="img/ewm.jpg" >
 	 			</div>
 	 		</div>
-	 			<img src="img/login-icon.png" class="login-icon">
-	 			<div class="login-box"></div>
-	 	</div>	
+			<img src="img/login-icon.png" class="login-icon">
+			<div class="login-box"></div>
+		</div>	
 	 </div>
 </div>
 	
@@ -167,8 +200,6 @@
 				</div>
 			</div>
 			<div id="YXhourse">
-				
-				
 			</div>
 			<div style="text-align: center;"><button type="button" class="layui-btn layui-btn-primary  layui-btn-lg index-seeMore" onclick="onMore()">查看更多>></button></div>
 		</div>
@@ -188,21 +219,48 @@
       						 <a href="pages/footer/user-agreeMent.html" target="_blank">用户协议</a> | 
       					</li>
       			  	 	<li  role="presentation">
-      						 <a href="http://www.caifangid.com/" target="_blank">友情链接</a> |
-      					</li>
-      			  	 	<li  role="presentation">
       						 <a href="javascript：void(0)" target="_blank">广告服务</a> 
       					</li>
-      			  	 	<div class="footer-clear"></div>
       			  	 </ul>
-      			  </div>	 
+					 <div class="footer-clear"></div>
+      			  </div>
+				<div class="footer-hr"/></div>
+				<div class="footer-top ">
+					 <ul  class="nav nav-pills tabItems index-detail">
+					 	<li   role="presentation">
+				      		<a href="pages/footer/about.html" target="_blank">热门楼盘</a> 
+				      	</li>
+					 	<li  role="presentation">
+				      		<a href="pages/footer/contact.html" target="_blank">热卖新房</a> 
+				      	</li>
+					 	<li  role="presentation">
+				      		<a href="pages/footer/user-agreeMent.html" target="_blank"> 热门城市</a> 
+				      	</li>
+					 	<li  role="presentation">
+				      		<a href="http://www.caifangid.com/" target="_blank">友情链接</a> 
+				      	</li>
+					 </ul>
+					<div class="footer-clear"></div>
+				</div>	 	   
       			  	 <div class="footer-content">
       			  	 	<div  class="content_1 ">
+							<ul>
+								<li><a href="#" target="_blank">银丰花园  </a></li>
+								<li><a href="#" target="_blank">佛山房价  </a></li>
+								<li><a href="#" target="_blank">佛山房产网</a></li>
+								<li><a href="#" target="_blank">佛山房价  </a></li>
+							   	<li><a href="#" target="_blank">佛山楼盘  </a></li>
+							   	<li><a href="#" target="_blank">佛山买房  </a></li>
+							   	<li><a href="#" target="_blank">佛山楼盘网</a></li>
+							   	<li><a href="#" target="_blank">佛山采房  </a></li>
+								<li><a href="#" target="_blank">佛山新房网</a></li>
+								<li><a href="#" target="_blank">佛山好房网</a></li>
+							</ul>
       			  	 	</div>
       			  	 	<div  class="content_1 ">
       			  	 	</div>
-      			  	 	<div  class="content_1 ">
-      			  	 	</div>
+						<div  class="content_1 ">
+						</div>
       			  	 	<div  class="content_1 ">
       			  	 		<ul>             
       			  	 			<li><a href="#" target="_blank">佛山新房  </a></li>
@@ -217,14 +275,13 @@
       			  	 			<li><a href="#" target="_blank">佛山好房网</a></li>
       			  	 		</ul>
       			  	 	</div>
-      			  	 	<div  class="content_1 "> 
-      			  	 	</div>
       			  	 </div>
-      			  <div class="footer-hr"/>	</div>
-      			  <p class="footer_help" style="color:#fff;"> <a >Copyright© 2018-2020 佛山采房信息科技有限公司版权所有</a>
-      				<a href="http://fsamr.foshan.gov.cn/" target="_blank"> <img src="img/footer-logo.png" alt=""></a>
-					<a class="footer-miit" href="http://www.beian.miit.gov.cn" target="_blank" style="padding:0 !important;">粤ICP备19025915号 </a>
-      			  </p>
+      			  <div class="footer-hr"/></div>
+      			  <div class="footer-help"> 
+							 <a href="http://fsamr.foshan.gov.cn/" target="_blank"> <img src="img/footer-logo.png" alt=""></a>
+							<a>Copyright© 2018-2020 佛山采房信息科技有限公司版权所有</a>
+							<a class="footer-miit" href="http://www.beian.miit.gov.cn" target="_blank" style="padding:0 !important;">粤ICP备19025915号 </a>
+      			  </div>
       	</footer>
 </body>
 <script src="./lib/jquery3.41.js" type="text/javascript" charset="utf-8"></script>
